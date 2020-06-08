@@ -1,4 +1,5 @@
 #include "uiHandler.h"
+#include "parser.h"
 #define WEEK_DAYS 5
 #define NUMBER_OF_CLASSES 3
 using std::vector;
@@ -85,8 +86,6 @@ void UIHandler::deleteProfessor(QString& id) {
 }
 
 
-#include <iostream>
-using namespace std;
 void UIHandler::displayAvailability(Grid*& grid, QString& id) {
   vector<Professor> professors = system.getProfessorsList();
   Professor target;
@@ -105,6 +104,18 @@ void UIHandler::displayAvailability(Grid*& grid, QString& id) {
       gridHandler.paintCell(grid,row,col,Qt::green);
     else
       gridHandler.paintCell(grid,row,col,Qt::red);
+  }
+}
+
+//                 Assignments methods
+void UIHandler::displayAssignments(Grid*& grid) {
+  vector<string> assignments = system.getAssignments();
+  gridHandler.giveFormat(grid, assignments.size(), 3);//3 is the number of fields retrieved
+  for (unsigned int row = 0; row < assignments.size(); ++row) {
+    for (unsigned int col = 0; col < 3; ++col){
+      gridHandler.display(grid, row, col,
+                                parser::parseAssignment(assignments[row], col));
+    }
   }
 }
 

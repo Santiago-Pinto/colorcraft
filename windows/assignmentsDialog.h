@@ -19,6 +19,7 @@ public:
 private:
     Ui::AssignmentsDialog *ui;
     UIHandler& uiHandler;
+    void refresh();
 };
 
 #endif // ASSIGNMENTSDIALOG_H

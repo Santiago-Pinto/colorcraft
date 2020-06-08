@@ -125,3 +125,14 @@ void System::refreshProfessors() {
   dataHandler.execute("SELECT * FROM profesor;", pRecords);
   this->professorRecords = parser::parseProfessors(pRecords);
 }
+
+//                    Assignments METHODS
+vector<string> System::getAssignments() {
+  string query = "SELECT asignaciones.curso,profesor.nombre, profesor.materia "
+                  "FROM asignaciones INNER JOIN  profesor "
+                  "ON asignaciones.profId=profesor.legajo "
+                  "ORDER BY asignaciones.curso";
+  vector<string> records;
+  dataHandler.execute(query, records);
+  return records;
+}

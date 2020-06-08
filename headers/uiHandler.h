@@ -41,6 +41,9 @@ class UIHandler {
     void deleteProfessor(QString& id);
     void displayAvailability(Grid*& grid, QString& id);
 
+    //Assignments methods
+    void displayAssignments(Grid*& grid);
+
     //Grid parameter related methods
     void paintCell(Grid*& grid, int row, int col, const QBrush& color);
 

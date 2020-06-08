@@ -22,6 +22,12 @@ class GridHandler {
     //Displays the specified professor on the grid
     void display(Grid*& grid, Professor& professor);
 
+    //Displays the specified item on the grid
+    //The cell where the content is displayed depends on the arguments passed
+    void display(Grid*& grid, int row, int col, std::string item);
+
+    void display(Grid*& grid, int row, int col, QString& item);
+
 
     //Sets grid column titles to those passed in the second argument
     void setTitles(Grid*& grid, QStringList& titles);

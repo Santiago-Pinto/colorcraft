@@ -114,3 +114,13 @@ vector<string> parser::parseColoring(string& node) {
 
   return coloringString;
 }
+
+string parser::parseAssignment(std::string& assignment, int field) {
+  size_t begin = 0;
+  size_t end = 0;
+  for (int i = 0; i <= field; ++i){
+    begin = assignment.find(":", begin + 1);
+  }
+  end = assignment.find(" ", begin);
+  return assignment.substr(begin+1, end - begin - 1);
+}

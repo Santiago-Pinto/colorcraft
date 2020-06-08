@@ -68,6 +68,17 @@ void GridHandler::display(Grid*& grid, Professor& professor) {
 }
 
 
+void GridHandler::display(Grid*& grid, int row, int col, std::string item) {
+  QString qItem = QString::fromStdString(item);
+  display(grid, row, col, qItem);
+}
+
+void GridHandler::display(Grid*& grid, int row, int col, QString& item) {
+  grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  grid->setItem(row, col, new QTableWidgetItem(item));
+}
+
 void GridHandler::setTitles(Grid*& grid, QStringList& titles) {
   grid->setColumnCount(titles.size());
   grid->setHorizontalHeaderLabels(titles);

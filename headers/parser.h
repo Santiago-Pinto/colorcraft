@@ -24,5 +24,9 @@ class parser {
 
 
     static std::vector<std::string> parseColoring(std::string& node);
+
+    //Returns the value of the specified field in an assignment
+    static std::string parseAssignment(std::string& assignment, int field);
+
 };
 #endif // PARSER_H_INCLUDED

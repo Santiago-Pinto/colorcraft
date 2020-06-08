@@ -42,6 +42,9 @@ class System {
 
     //Professor methods
     void deleteProfessor(std::string& profId);
+
+    //Assignments methods
+    std::vector<std::string> getAssignments();
 };
 
 
