@@ -39,3 +39,8 @@ void MainWindow::on_professorsBtn_clicked() {
   this->professorsDialog = new ProfessorsDialog(this->uiHandler, this);
   this->professorsDialog->show();
 }
+
+void MainWindow::on_assignmentsBtn_clicked() {
+  this->assignmentsDialog = new AssignmentsDialog(this->uiHandler, this);
+  this->assignmentsDialog->show();
+}

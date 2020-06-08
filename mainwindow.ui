@@ -14,57 +14,64 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="coloringBtn">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>290</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Armar Horario</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="subjectsBtn">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>290</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Asignaturas</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="exitBtn">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>290</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Salir</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="professorsBtn">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>80</x>
       <y>250</y>
-      <width>121</width>
-      <height>31</height>
+      <width>188</width>
+      <height>27</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Profesores</string>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="professorsBtn">
+       <property name="text">
+        <string>Profesores</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="assignmentsBtn">
+       <property name="text">
+        <string>Asignaciones</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>290</y>
+      <width>289</width>
+      <height>27</height>
+     </rect>
     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="coloringBtn">
+       <property name="text">
+        <string>Armar Horario</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="subjectsBtn">
+       <property name="text">
+        <string>Asignaturas</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="exitBtn">
+       <property name="text">
+        <string>Salir</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
