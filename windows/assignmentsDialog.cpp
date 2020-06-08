@@ -23,3 +23,18 @@ AssignmentsDialog::~AssignmentsDialog()
 {
     delete ui;
 }
+
+void AssignmentsDialog::on_btnNew_clicked() {
+
+}
+
+void AssignmentsDialog::on_btnDelete_clicked() {
+  ui->btnDelete->setEnabled(false);
+  QModelIndex index = ui->grdAssignments->selectionModel()->currentIndex();
+  QString course = index.sibling(index.row(), 0).data().toString();
+  QString professor = index.sibling(index.row(), 1).data().toString();
+  QString subject = index.sibling(index.row(), 2).data().toString();
+  uiHandler.deleteAssignment(course, professor, subject);
+  ui->btnDelete->setEnabled(true);
+  refresh();
+}

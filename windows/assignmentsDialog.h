@@ -16,6 +16,10 @@ public:
     explicit AssignmentsDialog(UIHandler& handler, QWidget *parent = nullptr);
     ~AssignmentsDialog();
 
+private slots:
+    void on_btnNew_clicked();
+    void on_btnDelete_clicked();
+
 private:
     Ui::AssignmentsDialog *ui;
     UIHandler& uiHandler;

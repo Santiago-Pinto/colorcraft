@@ -119,6 +119,14 @@ void UIHandler::displayAssignments(Grid*& grid) {
   }
 }
 
+void UIHandler::deleteAssignment(QString& course,QString& professor,
+                                 QString& subject) {
+  string strCourse = convertToStdString(course);
+  string strProfessor = convertToStdString(professor);
+  string strSubject = convertToStdString(subject);
+  system.deleteAssignment(strCourse, strProfessor, strSubject);
+}
+
 //                 Appearance methods
 void UIHandler::paintCell(Grid*& grid, int row, int col, const QBrush& color) {
   gridHandler.paintCell(grid, row, col, color);

@@ -136,3 +136,16 @@ vector<string> System::getAssignments() {
   dataHandler.execute(query, records);
   return records;
 }
+
+void System::deleteAssignment(string& strCourse,
+                              string& strProfessor,string& strSubject) {
+  string query = "DELETE FROM asignaciones "
+                  "WHERE curso||''||profId IN ("
+                  "SELECT curso||''||profId as id FROM asignaciones "
+                  "INNER JOIN profesor "
+                  "ON (asignaciones.profId=profesor.legajo) "
+                  "WHERE  nombre='" + strProfessor +
+                  "' AND materia='" + strSubject +
+                  "' AND curso='" +strCourse + "');";
+  dataHandler.execute(query);
+}
