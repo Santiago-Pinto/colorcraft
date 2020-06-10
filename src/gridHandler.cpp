@@ -16,16 +16,23 @@ GridHandler::~GridHandler() {
   //dtor
 }
 
-void GridHandler::format(Grid*& grid) {
+void GridHandler::clear(Grid*& grid) {
   grid->setRowCount(0);
+  setResizeMode(grid);
+}
+
+void GridHandler::setResizeMode(Grid*& grid) {
   grid->setTextElideMode(Qt::ElideMiddle);
   grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
   grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
+
+
+/***************************PUBLIC******************************/
 //Subject, Professor, Color
 void GridHandler::display(Grid*& grid, Coloring& coloring) {
-  this->format(grid);
+  this->clear(grid);
   vector<string> list = coloring.getAsStringList();
   for (unsigned int i = 0; i < NUMBER_OF_CLASSES ; ++i)
     grid->insertRow(grid->rowCount());
@@ -42,8 +49,7 @@ void GridHandler::display(Grid*& grid, Coloring& coloring) {
 }
 
 void GridHandler::display(Grid*& grid, Subject& subject) {
-  grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-  grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  setResizeMode(grid);
   QString id = QString::fromStdString(to_string(subject.getId()));
   QString name = QString::fromStdString(subject.getName());
   QString load = QString::fromStdString(to_string(subject.getLoad()));
@@ -56,8 +62,7 @@ void GridHandler::display(Grid*& grid, Subject& subject) {
 
 void GridHandler::display(Grid*& grid, Professor& professor) {
   string strId = to_string(professor.getId());
-  grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-  grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  setResizeMode(grid);
   QString id = QString::fromStdString(strId);
   QString name = QString::fromStdString(professor.getName());
   QString subject = QString::fromStdString(professor.getSubject());
@@ -74,8 +79,7 @@ void GridHandler::display(Grid*& grid, int row, int col, std::string item) {
 }
 
 void GridHandler::display(Grid*& grid, int row, int col, QString& item) {
-  grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-  grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  setResizeMode(grid);
   grid->setItem(row, col, new QTableWidgetItem(item));
 }
 
@@ -89,8 +93,7 @@ void GridHandler::paintCell(Grid*& grid, int row, int col, const QBrush& color){
 }
 
 void GridHandler::giveFormat(Grid*& grid, int rows, int cols) {
-  grid->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-  grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+  setResizeMode(grid);
   grid->setRowCount(rows);
   grid->setColumnCount(cols);
 

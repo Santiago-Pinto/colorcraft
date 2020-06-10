@@ -7,7 +7,9 @@ typedef QTableWidget Grid;
 
 class GridHandler {
   private:
-    void format(Grid*& grid);
+    void clear(Grid*& grid);
+    //Sets the horizontal and vertical resize mode to stretch
+    void setResizeMode(Grid*& grid);
 
   public:
      GridHandler();
