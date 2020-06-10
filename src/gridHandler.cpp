@@ -27,8 +27,6 @@ void GridHandler::setResizeMode(Grid*& grid) {
   grid->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
-
-
 /***************************PUBLIC******************************/
 //Subject, Professor, Color
 void GridHandler::display(Grid*& grid, Coloring& coloring) {
@@ -48,16 +46,17 @@ void GridHandler::display(Grid*& grid, Coloring& coloring) {
   }
 }
 
+#include <iostream>
+using namespace std;
 void GridHandler::display(Grid*& grid, Subject& subject) {
   setResizeMode(grid);
   QString id = QString::fromStdString(to_string(subject.getId()));
   QString name = QString::fromStdString(subject.getName());
   QString load = QString::fromStdString(to_string(subject.getLoad()));
   grid->insertRow(grid->rowCount());
-  grid->setItem(grid->rowCount() - 1, 0, new QTableWidgetItem(id));
-  grid->setItem(grid->rowCount() - 1, 1, new QTableWidgetItem(name));
-  grid->setItem(grid->rowCount() - 1, 2, new QTableWidgetItem(load));
-
+  display(grid, grid->rowCount() - 1, 0, id);
+  display(grid, grid->rowCount() - 1, 1, name);
+  display(grid, grid->rowCount() - 1, 2, load);
 }
 
 void GridHandler::display(Grid*& grid, Professor& professor) {
@@ -67,9 +66,10 @@ void GridHandler::display(Grid*& grid, Professor& professor) {
   QString name = QString::fromStdString(professor.getName());
   QString subject = QString::fromStdString(professor.getSubject());
   grid->insertRow(grid->rowCount());
-  grid->setItem(grid->rowCount() - 1, 0, new QTableWidgetItem(id));
-  grid->setItem(grid->rowCount() - 1, 1, new QTableWidgetItem(name));
-  grid->setItem(grid->rowCount() - 1, 2, new QTableWidgetItem(subject));
+  display(grid, grid->rowCount() - 1, 0, id);
+  display(grid, grid->rowCount() - 1, 1, name);
+  display(grid, grid->rowCount() - 1, 2, subject);
+  cout<<"DSJFHLDSFHDS"<<endl;
 }
 
 
@@ -82,6 +82,7 @@ void GridHandler::display(Grid*& grid, int row, int col, QString& item) {
   setResizeMode(grid);
   grid->setItem(row, col, new QTableWidgetItem(item));
 }
+
 
 void GridHandler::setTitles(Grid*& grid, QStringList& titles) {
   grid->setColumnCount(titles.size());

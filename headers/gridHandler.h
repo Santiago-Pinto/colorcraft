@@ -3,6 +3,7 @@
 #include <QtWidgets/QTableWidget>
 #include "coloring.h"
 #include "subject.h"
+#include <vector>
 typedef QTableWidget Grid;
 
 class GridHandler {
@@ -29,7 +30,6 @@ class GridHandler {
     void display(Grid*& grid, int row, int col, std::string item);
 
     void display(Grid*& grid, int row, int col, QString& item);
-
 
     //Sets grid column titles to those passed in the second argument
     void setTitles(Grid*& grid, QStringList& titles);
