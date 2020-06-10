@@ -46,8 +46,7 @@ void GridHandler::display(Grid*& grid, Coloring& coloring) {
   }
 }
 
-#include <iostream>
-using namespace std;
+
 void GridHandler::display(Grid*& grid, Subject& subject) {
   setResizeMode(grid);
   QString id = QString::fromStdString(to_string(subject.getId()));
@@ -69,7 +68,6 @@ void GridHandler::display(Grid*& grid, Professor& professor) {
   display(grid, grid->rowCount() - 1, 0, id);
   display(grid, grid->rowCount() - 1, 1, name);
   display(grid, grid->rowCount() - 1, 2, subject);
-  cout<<"DSJFHLDSFHDS"<<endl;
 }
 
 
