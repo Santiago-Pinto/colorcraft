@@ -1,0 +1,9 @@
+moc*
+ui*
+colorcraft
+*.ui
+Makefile
+*.user
+*.db
+.qmake*
+*.md
