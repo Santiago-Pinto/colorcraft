@@ -7,6 +7,7 @@ NewAssignmentDialog::NewAssignmentDialog(UIHandler& handler, QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Nueva Asignacion");
     uiHandler.loadComboBoxWithCourses(ui->cmbCourse);
+    uiHandler.loadComboBoxWithSubjects(ui->cmbSubject);
 }
 
 NewAssignmentDialog::~NewAssignmentDialog() {

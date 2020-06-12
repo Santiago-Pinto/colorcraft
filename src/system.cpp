@@ -63,7 +63,7 @@ vector<string> System::getCourses() {
 vector<string> System::getSubjects() {
   set<string> subjects;
   for (auto professor: this->professorRecords) {
-    string subject = "                       " + professor.getSubject();
+    string subject = professor.getSubject();
     if (subjects.find(subject) == subjects.end())
       subjects.insert(subject);
   }

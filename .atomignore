@@ -1,5 +1,5 @@
 moc*
-ui*
+ui_*
 colorcraft
 *.ui
 Makefile
