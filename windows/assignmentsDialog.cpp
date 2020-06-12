@@ -25,7 +25,9 @@ AssignmentsDialog::~AssignmentsDialog()
 }
 
 void AssignmentsDialog::on_btnNew_clicked() {
-
+  this->newAssignmentDialog = new NewAssignmentDialog
+                                         (this->uiHandler, this);
+  this->newAssignmentDialog->show();
 }
 
 void AssignmentsDialog::on_btnDelete_clicked() {

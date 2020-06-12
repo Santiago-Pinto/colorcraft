@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "uiHandler.h"
+#include "newAssignmentDialog.h"
 
 namespace Ui {
 class AssignmentsDialog;
@@ -22,6 +23,7 @@ private slots:
 
 private:
     Ui::AssignmentsDialog *ui;
+    NewAssignmentDialog* newAssignmentDialog;
     UIHandler& uiHandler;
     void refresh();
 };

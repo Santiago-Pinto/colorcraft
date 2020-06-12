@@ -68,6 +68,7 @@ SOURCES       = main.cpp \
 		windows/availabilityCheckView.cpp \
 		windows/coloringdialog.cpp \
 		windows/mainwindow.cpp \
+		windows/newAssignmentDialog.cpp \
 		windows/professorsDialog.cpp \
 		windows/subjectChangeDialog.cpp \
 		windows/subjectinputdialog.cpp \
@@ -75,6 +76,7 @@ SOURCES       = main.cpp \
 		moc_availabilityCheckView.cpp \
 		moc_coloringdialog.cpp \
 		moc_mainwindow.cpp \
+		moc_newAssignmentDialog.cpp \
 		moc_professorsDialog.cpp \
 		moc_subjectChangeDialog.cpp \
 		moc_subjectinputdialog.cpp \
@@ -97,6 +99,7 @@ OBJECTS       = obj/main.o \
 		obj/availabilityCheckView.o \
 		obj/coloringdialog.o \
 		obj/mainwindow.o \
+		obj/newAssignmentDialog.o \
 		obj/professorsDialog.o \
 		obj/subjectChangeDialog.o \
 		obj/subjectinputdialog.o \
@@ -105,6 +108,7 @@ OBJECTS       = obj/main.o \
 		obj/moc_availabilityCheckView.o \
 		obj/moc_coloringdialog.o \
 		obj/moc_mainwindow.o \
+		obj/moc_newAssignmentDialog.o \
 		obj/moc_professorsDialog.o \
 		obj/moc_subjectChangeDialog.o \
 		obj/moc_subjectinputdialog.o \
@@ -286,7 +290,8 @@ DIST          = /home/santiago/anaconda3/mkspecs/features/spec_pre.prf \
 		/home/santiago/anaconda3/mkspecs/features/exceptions.prf \
 		/home/santiago/anaconda3/mkspecs/features/yacc.prf \
 		/home/santiago/anaconda3/mkspecs/features/lex.prf \
-		colorcraft.pro ui_availabilitycheckview.h \
+		colorcraft.pro ui_assignmentsDialog.h \
+		ui_availabilitycheckview.h \
 		ui_coloringdialog.h \
 		ui_mainwindow.h \
 		ui_professorsdialog.h \
@@ -310,6 +315,7 @@ DIST          = /home/santiago/anaconda3/mkspecs/features/spec_pre.prf \
 		windows/availabilityCheckView.h \
 		windows/coloringdialog.h \
 		windows/mainwindow.h \
+		windows/newAssignmentDialog.h \
 		windows/professorsDialog.h \
 		windows/subjectChangeDialog.h \
 		windows/subjectinputdialog.h \
@@ -331,6 +337,7 @@ DIST          = /home/santiago/anaconda3/mkspecs/features/spec_pre.prf \
 		windows/availabilityCheckView.cpp \
 		windows/coloringdialog.cpp \
 		windows/mainwindow.cpp \
+		windows/newAssignmentDialog.cpp \
 		windows/professorsDialog.cpp \
 		windows/subjectChangeDialog.cpp \
 		windows/subjectinputdialog.cpp \
@@ -343,7 +350,7 @@ TARGET        = colorcraft
 first: all
 ####### Build rules
 
-$(TARGET): ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h $(OBJECTS)  
+$(TARGET): ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_newassignmentdialog.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: colorcraft.pro /home/santiago/anaconda3/mkspecs/linux-g++/qmake.conf /home/santiago/anaconda3/mkspecs/features/spec_pre.prf \
@@ -726,9 +733,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/santiago/anaconda3/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h headers/assignment.h headers/builder.h headers/coloring.h headers/comboBoxHandler.h headers/dbHandler.h headers/gridHandler.h headers/node.h headers/painter.h headers/parser.h headers/professor.h headers/subject.h headers/system.h headers/uiHandler.h windows/assignmentsDialog.h windows/availabilityCheckView.h windows/coloringdialog.h windows/mainwindow.h windows/professorsDialog.h windows/subjectChangeDialog.h windows/subjectinputdialog.h windows/subjectsdialog.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp src/assignment.cpp src/builder.cpp src/coloring.cpp src/comboBoxHandler.cpp src/dbHandler.cpp src/gridHandler.cpp src/node.cpp src/painter.cpp src/parser.cpp src/professor.cpp src/subject.cpp src/system.cpp src/uiHandler.cpp windows/assignmentsDialog.cpp windows/availabilityCheckView.cpp windows/coloringdialog.cpp windows/mainwindow.cpp windows/professorsDialog.cpp windows/subjectChangeDialog.cpp windows/subjectinputdialog.cpp windows/subjectsdialog.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents assignmentsDialog.ui availabilitycheckview.ui coloringdialog.ui mainwindow.ui professorsdialog.ui subjectchangedialog.ui subjectinputdialog.ui subjectsdialog.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h headers/assignment.h headers/builder.h headers/coloring.h headers/comboBoxHandler.h headers/dbHandler.h headers/gridHandler.h headers/node.h headers/painter.h headers/parser.h headers/professor.h headers/subject.h headers/system.h headers/uiHandler.h windows/assignmentsDialog.h windows/availabilityCheckView.h windows/coloringdialog.h windows/mainwindow.h windows/newAssignmentDialog.h windows/professorsDialog.h windows/subjectChangeDialog.h windows/subjectinputdialog.h windows/subjectsdialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp src/assignment.cpp src/builder.cpp src/coloring.cpp src/comboBoxHandler.cpp src/dbHandler.cpp src/gridHandler.cpp src/node.cpp src/painter.cpp src/parser.cpp src/professor.cpp src/subject.cpp src/system.cpp src/uiHandler.cpp windows/assignmentsDialog.cpp windows/availabilityCheckView.cpp windows/coloringdialog.cpp windows/mainwindow.cpp windows/newAssignmentDialog.cpp windows/professorsDialog.cpp windows/subjectChangeDialog.cpp windows/subjectinputdialog.cpp windows/subjectsdialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents assignmentsDialog.ui availabilitycheckview.ui coloringdialog.ui mainwindow.ui newassignmentdialog.ui professorsdialog.ui subjectchangedialog.ui subjectinputdialog.ui subjectsdialog.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -760,9 +767,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/santiago/anaconda3/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /home/santiago/anaconda3/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_assignmentsDialog.cpp moc_availabilityCheckView.cpp moc_coloringdialog.cpp moc_mainwindow.cpp moc_professorsDialog.cpp moc_subjectChangeDialog.cpp moc_subjectinputdialog.cpp moc_subjectsdialog.cpp
+compiler_moc_header_make_all: moc_assignmentsDialog.cpp moc_availabilityCheckView.cpp moc_coloringdialog.cpp moc_mainwindow.cpp moc_newAssignmentDialog.cpp moc_professorsDialog.cpp moc_subjectChangeDialog.cpp moc_subjectinputdialog.cpp moc_subjectsdialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_assignmentsDialog.cpp moc_availabilityCheckView.cpp moc_coloringdialog.cpp moc_mainwindow.cpp moc_professorsDialog.cpp moc_subjectChangeDialog.cpp moc_subjectinputdialog.cpp moc_subjectsdialog.cpp
+	-$(DEL_FILE) moc_assignmentsDialog.cpp moc_availabilityCheckView.cpp moc_coloringdialog.cpp moc_mainwindow.cpp moc_newAssignmentDialog.cpp moc_professorsDialog.cpp moc_subjectChangeDialog.cpp moc_subjectinputdialog.cpp moc_subjectsdialog.cpp
 moc_assignmentsDialog.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qdialog.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h \
@@ -864,6 +871,41 @@ moc_assignmentsDialog.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QDialog
 		/home/santiago/anaconda3/include/qt/QtCore/qfiledevice.h \
 		/home/santiago/anaconda3/include/qt/QtGui/qvector2d.h \
 		/home/santiago/anaconda3/include/qt/QtGui/qtouchdevice.h \
+		headers/uiHandler.h \
+		headers/gridHandler.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QTableWidget \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtablewidget.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtableview.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractitemview.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractscrollarea.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qframe.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qabstractitemmodel.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qitemselectionmodel.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractitemdelegate.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qstyleoption.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractspinbox.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qvalidator.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qregularexpression.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qicon.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qslider.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractslider.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qstyle.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtabbar.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtabwidget.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qrubberband.h \
+		headers/coloring.h \
+		headers/node.h \
+		headers/professor.h \
+		headers/subject.h \
+		headers/comboBoxHandler.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QComboBox \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qcombobox.h \
+		headers/system.h \
+		headers/builder.h \
+		headers/assignment.h \
+		headers/painter.h \
+		headers/dbHandler.h \
+		headers/parser.h \
 		windows/assignmentsDialog.h \
 		moc_predefs.h \
 		/home/santiago/anaconda3/bin/moc
@@ -1295,10 +1337,117 @@ moc_mainwindow.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QMainWindow \
 		windows/subjectChangeDialog.h \
 		windows/professorsDialog.h \
 		windows/availabilityCheckView.h \
+		windows/assignmentsDialog.h \
 		windows/mainwindow.h \
 		moc_predefs.h \
 		/home/santiago/anaconda3/bin/moc
 	/home/santiago/anaconda3/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/santiago/anaconda3/mkspecs/linux-g++ -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft/headers' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft/windows' -I/home/santiago/anaconda3/include/qt -I/home/santiago/anaconda3/include/qt/QtWidgets -I/home/santiago/anaconda3/include/qt/QtGui -I/home/santiago/anaconda3/include/qt/QtSql -I/home/santiago/anaconda3/include/qt/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include windows/mainwindow.h -o moc_mainwindow.cpp
+
+moc_newAssignmentDialog.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qdialog.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtguiglobal.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qglobal.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qconfig-bootstrapped.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qconfig.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtcore-config.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsystemdetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qprocessordetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcompilerdetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtypeinfo.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsysinfo.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlogging.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qflags.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbasicatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_bootstrap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qgenericatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_cxx11.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_msvc.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qglobalstatic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmutex.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qnumeric.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qversiontagging.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtgui-config.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtwidgets-config.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qwidget.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qwindowdefs.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobjectdefs.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qnamespace.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobjectdefs_impl.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qwindowdefs_win.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobject.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstring.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qchar.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbytearray.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qrefcount.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qarraydata.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringbuilder.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qalgorithms.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qiterator.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qhashfunctions.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qpair.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbytearraylist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringlist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qregexp.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringmatcher.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcoreevent.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qscopedpointer.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmetatype.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvarlengtharray.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcontainerfwd.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobject_impl.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmargins.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpaintdevice.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qrect.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsize.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qpoint.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpalette.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qcolor.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qrgb.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qrgba64.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qbrush.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvector.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qmatrix.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpolygon.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qregion.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qdatastream.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qiodevice.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qline.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtransform.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpainterpath.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qimage.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpixelformat.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpixmap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsharedpointer.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qshareddata.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qhash.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsharedpointer_impl.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfont.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfontmetrics.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfontinfo.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qsizepolicy.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qcursor.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qkeysequence.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qevent.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvariant.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qdebug.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtextstream.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlocale.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qset.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcontiguouscache.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qurl.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qurlquery.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qfile.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qfiledevice.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qvector2d.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtouchdevice.h \
+		windows/newAssignmentDialog.h \
+		moc_predefs.h \
+		/home/santiago/anaconda3/bin/moc
+	/home/santiago/anaconda3/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/santiago/anaconda3/mkspecs/linux-g++ -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft/headers' -I'/home/santiago/Desktop/Academico/UBA/Modelos y Optimizacion 3 (71.20)/TP  individual/App/Repo/colorcraft/windows' -I/home/santiago/anaconda3/include/qt -I/home/santiago/anaconda3/include/qt/QtWidgets -I/home/santiago/anaconda3/include/qt/QtGui -I/home/santiago/anaconda3/include/qt/QtSql -I/home/santiago/anaconda3/include/qt/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include windows/newAssignmentDialog.h -o moc_newAssignmentDialog.cpp
 
 moc_professorsDialog.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qdialog.h \
@@ -1869,9 +2018,9 @@ moc_subjectsdialog.cpp: /home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h
+compiler_uic_make_all: ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_newassignmentdialog.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h
+	-$(DEL_FILE) ui_assignmentsDialog.h ui_availabilitycheckview.h ui_coloringdialog.h ui_mainwindow.h ui_newassignmentdialog.h ui_professorsdialog.h ui_subjectchangedialog.h ui_subjectinputdialog.h ui_subjectsdialog.h
 ui_assignmentsDialog.h: assignmentsDialog.ui \
 		/home/santiago/anaconda3/bin/uic
 	/home/santiago/anaconda3/bin/uic assignmentsDialog.ui -o ui_assignmentsDialog.h
@@ -1887,6 +2036,10 @@ ui_coloringdialog.h: coloringdialog.ui \
 ui_mainwindow.h: mainwindow.ui \
 		/home/santiago/anaconda3/bin/uic
 	/home/santiago/anaconda3/bin/uic mainwindow.ui -o ui_mainwindow.h
+
+ui_newassignmentdialog.h: newassignmentdialog.ui \
+		/home/santiago/anaconda3/bin/uic
+	/home/santiago/anaconda3/bin/uic newassignmentdialog.ui -o ui_newassignmentdialog.h
 
 ui_professorsdialog.h: professorsdialog.ui \
 		/home/santiago/anaconda3/bin/uic
@@ -2059,6 +2212,7 @@ obj/main.o: main.cpp windows/mainwindow.h \
 		windows/subjectChangeDialog.h \
 		windows/professorsDialog.h \
 		windows/availabilityCheckView.h \
+		windows/assignmentsDialog.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QApplication \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qapplication.h \
 		/home/santiago/anaconda3/include/qt/QtCore/qcoreapplication.h \
@@ -2607,7 +2761,67 @@ obj/assignmentsDialog.o: windows/assignmentsDialog.cpp windows/assignmentsDialog
 		/home/santiago/anaconda3/include/qt/QtCore/qfiledevice.h \
 		/home/santiago/anaconda3/include/qt/QtGui/qvector2d.h \
 		/home/santiago/anaconda3/include/qt/QtGui/qtouchdevice.h \
-		ui_assignmentsDialog.h
+		headers/uiHandler.h \
+		headers/gridHandler.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QTableWidget \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtablewidget.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtableview.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractitemview.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractscrollarea.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qframe.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qabstractitemmodel.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qitemselectionmodel.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractitemdelegate.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qstyleoption.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractspinbox.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qvalidator.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qregularexpression.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qicon.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qslider.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractslider.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qstyle.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtabbar.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtabwidget.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qrubberband.h \
+		headers/coloring.h \
+		headers/node.h \
+		headers/professor.h \
+		headers/subject.h \
+		headers/comboBoxHandler.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QComboBox \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qcombobox.h \
+		headers/system.h \
+		headers/builder.h \
+		headers/assignment.h \
+		headers/painter.h \
+		headers/dbHandler.h \
+		headers/parser.h \
+		ui_assignmentsDialog.h \
+		/home/santiago/anaconda3/include/qt/QtCore/QVariant \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QAction \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qaction.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qactiongroup.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QApplication \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qapplication.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcoreapplication.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qeventloop.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qdesktopwidget.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qguiapplication.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qinputmethod.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QButtonGroup \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qbuttongroup.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QHBoxLayout \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qboxlayout.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qlayout.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qlayoutitem.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qgridlayout.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QHeaderView \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qheaderview.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QPushButton \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qpushbutton.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractbutton.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QVBoxLayout \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/assignmentsDialog.o windows/assignmentsDialog.cpp
 
 obj/availabilityCheckView.o: windows/availabilityCheckView.cpp windows/availabilityCheckView.h \
@@ -3089,6 +3303,7 @@ obj/mainwindow.o: windows/mainwindow.cpp windows/mainwindow.h \
 		windows/subjectChangeDialog.h \
 		windows/professorsDialog.h \
 		windows/availabilityCheckView.h \
+		windows/assignmentsDialog.h \
 		ui_mainwindow.h \
 		/home/santiago/anaconda3/include/qt/QtCore/QVariant \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QAction \
@@ -3103,6 +3318,11 @@ obj/mainwindow.o: windows/mainwindow.cpp windows/mainwindow.h \
 		/home/santiago/anaconda3/include/qt/QtGui/qinputmethod.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QButtonGroup \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qbuttongroup.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QHBoxLayout \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qboxlayout.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qlayout.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qlayoutitem.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qgridlayout.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QHeaderView \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qheaderview.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QMenuBar \
@@ -3113,6 +3333,111 @@ obj/mainwindow.o: windows/mainwindow.cpp windows/mainwindow.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/qabstractbutton.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/mainwindow.o windows/mainwindow.cpp
+
+obj/newAssignmentDialog.o: windows/newAssignmentDialog.cpp windows/newAssignmentDialog.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qdialog.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtwidgetsglobal.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtguiglobal.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qglobal.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qconfig-bootstrapped.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qconfig.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtcore-config.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsystemdetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qprocessordetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcompilerdetection.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtypeinfo.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsysinfo.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlogging.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qflags.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbasicatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_bootstrap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qgenericatomic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_cxx11.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qatomic_msvc.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qglobalstatic.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmutex.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qnumeric.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qversiontagging.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtgui-config.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qtwidgets-config.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qwidget.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qwindowdefs.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobjectdefs.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qnamespace.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobjectdefs_impl.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qwindowdefs_win.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobject.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstring.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qchar.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbytearray.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qrefcount.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qarraydata.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringbuilder.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qalgorithms.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qiterator.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qhashfunctions.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qpair.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qbytearraylist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringlist.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qregexp.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qstringmatcher.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcoreevent.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qscopedpointer.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmetatype.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvarlengtharray.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcontainerfwd.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qobject_impl.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmargins.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpaintdevice.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qrect.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsize.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qpoint.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpalette.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qcolor.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qrgb.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qrgba64.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qbrush.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvector.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qmatrix.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpolygon.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qregion.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qdatastream.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qiodevice.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qline.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtransform.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpainterpath.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qimage.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpixelformat.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qpixmap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsharedpointer.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qshareddata.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qhash.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qsharedpointer_impl.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfont.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfontmetrics.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qfontinfo.h \
+		/home/santiago/anaconda3/include/qt/QtWidgets/qsizepolicy.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qcursor.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qkeysequence.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qevent.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qvariant.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qmap.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qdebug.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qtextstream.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qlocale.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qset.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qcontiguouscache.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qurl.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qurlquery.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qfile.h \
+		/home/santiago/anaconda3/include/qt/QtCore/qfiledevice.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qvector2d.h \
+		/home/santiago/anaconda3/include/qt/QtGui/qtouchdevice.h \
+		ui_newassignmentdialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/newAssignmentDialog.o windows/newAssignmentDialog.cpp
 
 obj/professorsDialog.o: windows/professorsDialog.cpp windows/professorsDialog.h \
 		/home/santiago/anaconda3/include/qt/QtWidgets/QDialog \
@@ -3810,6 +4135,9 @@ obj/moc_coloringdialog.o: moc_coloringdialog.cpp
 
 obj/moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_mainwindow.o moc_mainwindow.cpp
+
+obj/moc_newAssignmentDialog.o: moc_newAssignmentDialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_newAssignmentDialog.o moc_newAssignmentDialog.cpp
 
 obj/moc_professorsDialog.o: moc_professorsDialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_professorsDialog.o moc_professorsDialog.cpp
