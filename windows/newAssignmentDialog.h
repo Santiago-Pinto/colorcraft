@@ -20,8 +20,6 @@ public:
 private slots:
     void on_btnAssign_clicked();
     void on_btnExit_clicked();
-    void on_cmbCourse_currentTextChanged(const QString &arg1);
-    void on_cmbProfessor_currentTextChanged(const QString &arg1);
     void on_cmbSubject_currentTextChanged(const QString &arg1);
 
 private:

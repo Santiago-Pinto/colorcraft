@@ -22,13 +22,6 @@ void NewAssignmentDialog::on_btnExit_clicked() {
   close();
 }
 
-void NewAssignmentDialog::on_cmbCourse_currentTextChanged(const QString &arg1) {
-
-}
-
-void NewAssignmentDialog::on_cmbProfessor_currentTextChanged(const QString &arg1) {
-
-}
 
 void NewAssignmentDialog::on_cmbSubject_currentTextChanged(const QString &arg1){
   ui->cmbProfessor->clear();
