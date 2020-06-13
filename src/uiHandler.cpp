@@ -150,3 +150,14 @@ void UIHandler::deleteAssignment(QString& course,QString& professor,
 void UIHandler::paintCell(Grid*& grid, int row, int col, const QBrush& color) {
   gridHandler.paintCell(grid, row, col, color);
 }
+
+void UIHandler::formatGrid(Grid*& grid) {
+  gridHandler.giveFormat(grid, NUMBER_OF_CLASSES, WEEK_DAYS);
+}
+
+void UIHandler::paintGrid(Grid*& grid, const QBrush& color) {
+  for (int row = 0; row < NUMBER_OF_CLASSES; ++row) {
+    for (int col = 0; col < WEEK_DAYS; ++col)
+      paintCell(grid, row, col, color);
+  }
+}

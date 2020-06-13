@@ -52,12 +52,13 @@ public:
         lblAvailability->setGeometry(QRect(120, 90, 111, 17));
         layoutWidget = new QWidget(newProfessorDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(40, 110, 258, 227));
+        layoutWidget->setGeometry(QRect(27, 110, 281, 227));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         grdAvailability = new QTableWidget(layoutWidget);
         grdAvailability->setObjectName(QStringLiteral("grdAvailability"));
+        grdAvailability->setFocusPolicy(Qt::StrongFocus);
 
         verticalLayout->addWidget(grdAvailability);
 

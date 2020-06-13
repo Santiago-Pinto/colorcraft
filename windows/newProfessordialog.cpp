@@ -10,6 +10,8 @@ newProfessorDialog::newProfessorDialog(UIHandler& handler, QWidget *parent) :
     titles << "Lunes" << "Martes" << "Miercoles" << "Jueves" << "Viernes";
     uiHandler.setGridTitles(ui->grdAvailability, titles);
     uiHandler.loadComboBoxWithSubjects(ui->cmbSubject);
+    uiHandler.formatGrid(ui->grdAvailability);
+    uiHandler.paintGrid(ui->grdAvailability, Qt::red);
 }
 
 newProfessorDialog::~newProfessorDialog() {
@@ -17,7 +19,11 @@ newProfessorDialog::~newProfessorDialog() {
 }
 
 void newProfessorDialog::on_grdAvailability_cellClicked(int row, int column) {
-
+  if(ui->grdAvailability->item(row, column)->background().color() == Qt::red)
+    uiHandler.paintCell(ui->grdAvailability, row, column, Qt::green);
+  else
+    uiHandler.paintCell(ui->grdAvailability, row, column, Qt::red);
+  ui->grdAvailability->setCurrentCell(-1,-1);
 }
 
 void newProfessorDialog::on_btnAccept_clicked() {

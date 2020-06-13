@@ -50,6 +50,7 @@ class UIHandler {
 
     //Grid parameter related methods
     void paintCell(Grid*& grid, int row, int col, const QBrush& color);
-
+    void formatGrid(Grid*& grid);
+    void paintGrid(Grid*& grid, const QBrush& color);
 };
 #endif // UIHANDLER_H_INCLUDED
