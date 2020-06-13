@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
-    <height>229</height>
+    <width>471</width>
+    <height>279</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,20 +18,27 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>385</width>
-     <height>227</height>
+     <width>461</width>
+     <height>270</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QTableWidget" name="grdProfessors">
-      <property name="selectionBehavior">
-       <enum>QAbstractItemView::SelectRows</enum>
-      </property>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="grdProfessors">
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout"/>
+      </item>
+     </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QPushButton" name="btnConsult">
         <property name="text">
@@ -39,6 +46,17 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="btnNew">
+        <property name="text">
+         <string>Nuevo profesor</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="btnModify">
         <property name="text">

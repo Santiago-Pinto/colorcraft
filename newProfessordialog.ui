@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>newProfessorDialog</class>
+ <widget class="QDialog" name="newProfessorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>339</width>
+    <height>347</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblAvailability">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>90</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Disponibilidad</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>258</width>
+     <height>227</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTableWidget" name="grdAvailability"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="btnAccept">
+        <property name="text">
+         <string>Aceptar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExit">
+        <property name="text">
+         <string>Salir</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>324</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="lblName">
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="txtName"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QComboBox" name="cmbSubject">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>321</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Materia</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

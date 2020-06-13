@@ -14,6 +14,7 @@ ProfessorsDialog::ProfessorsDialog(UIHandler& handler, QWidget *parent) :
 
 ProfessorsDialog::~ProfessorsDialog(){
     delete availabilityCheckView;
+    delete creationDialog;
     delete ui;
 }
 
@@ -45,4 +46,9 @@ void ProfessorsDialog::on_btnRemove_clicked() {
   uiHandler.deleteProfessor(id);
   ui->btnRemove->setEnabled(true);
   refresh();
+}
+
+void ProfessorsDialog::on_btnNew_clicked() {
+  creationDialog = new newProfessorDialog(this->uiHandler, this);
+  creationDialog->show();
 }

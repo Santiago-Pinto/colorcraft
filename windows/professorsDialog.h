@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "uiHandler.h"
 #include "availabilityCheckView.h"
+#include "newProfessordialog.h"
 
 namespace Ui {
 class ProfessorsDialog;
@@ -20,10 +21,12 @@ private slots:
     void on_btnConsult_clicked();
     void on_btnModify_clicked();
     void on_btnRemove_clicked();
+    void on_btnNew_clicked();
 
 private:
     UIHandler& uiHandler;
     AvailabilityCheckView* availabilityCheckView;
+    newProfessorDialog* creationDialog;
     Ui::ProfessorsDialog *ui;
     void refresh();
 };
