@@ -28,8 +28,10 @@ class UIHandler {
     std::string getComboBoxValue(QComboBox*& cmbBox);
 
     //Combo box methods
-    void loadComboBoxWithCourses(QComboBox*& cmbBoxl);
-    void loadComboBoxWithSubjects(QComboBox*& cmbBoxl);
+    void loadComboBoxWithCourses(QComboBox*& cmbBox);
+    void loadComboBoxWithSubjects(QComboBox*& cmbBox);
+    void loadComboBoxWithProfessors(QComboBox*& cmbProfessor,
+                                    QComboBox*& cmbSubject);
 
     //Subject methods
     void newSubject(QString& name, QString& load);

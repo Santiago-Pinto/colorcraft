@@ -34,6 +34,7 @@ class System {
     std::vector<Professor> getProfessorsList();
     std::vector<std::string> getCourses();
     std::vector<std::string> getSubjects();
+    std::vector<Professor> getProfessors(std::string subject);
 
     //Subject methods
     void newSubject(std::string& name, std::string& load);

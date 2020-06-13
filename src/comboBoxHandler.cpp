@@ -15,7 +15,7 @@ string CmbBoxHandler::getValue(QComboBox*& cmbBox) {
 }
 
 
-void CmbBoxHandler::addItem(QComboBox*& cmbBox, string& item) {
+void CmbBoxHandler::addItem(QComboBox*& cmbBox, string item) {
   QString value = QString::fromStdString(item);
   cmbBox->addItem(value);
 }

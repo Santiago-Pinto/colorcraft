@@ -15,6 +15,6 @@ class CmbBoxHandler {
     std::string getValue(QComboBox*& cmbBox);
 
     //Adds a new element to the combo box list
-    void addItem(QComboBox*& cmbBox, std::string& item);
+    void addItem(QComboBox*& cmbBox, std::string item);
 };
 #endif // COMBOBOX_H_INCLUDED

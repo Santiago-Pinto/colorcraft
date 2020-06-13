@@ -31,5 +31,6 @@ void NewAssignmentDialog::on_cmbProfessor_currentTextChanged(const QString &arg1
 }
 
 void NewAssignmentDialog::on_cmbSubject_currentTextChanged(const QString &arg1){
-
+  ui->cmbProfessor->clear();
+  uiHandler.loadComboBoxWithProfessors(ui->cmbProfessor, ui->cmbSubject);
 }

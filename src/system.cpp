@@ -55,6 +55,16 @@ vector<Professor> System::getProfessorsList() {
   return this->professorRecords;
 }
 
+vector<Professor> System::getProfessors(string subject) {
+  vector<Professor> records;
+  for (Professor p: this->professorRecords) {
+    if (p.getSubject() == subject)
+      records.push_back(p);
+  }
+  return records;
+}
+
+
 
 vector<string> System::getCourses() {
   return this->courseRecords;

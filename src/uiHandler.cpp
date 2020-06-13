@@ -55,6 +55,15 @@ void UIHandler::loadComboBoxWithSubjects(QComboBox*& cmbBox) {
       cmbHandler.addItem(cmbBox, item);
 }
 
+void UIHandler::loadComboBoxWithProfessors(QComboBox*& cmbProfessor,
+                                           QComboBox*& cmbSubject) {
+
+  string subject = cmbHandler.getValue(cmbSubject);
+  for(auto item : this->system.getProfessors(subject))
+    cmbHandler.addItem(cmbProfessor, item.getName());
+}
+
+
 //                 Subjects methods
 void UIHandler::newSubject(QString& name, QString& load) {
   string strLoad = convertToStdString(load);
