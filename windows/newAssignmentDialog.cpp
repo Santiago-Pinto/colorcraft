@@ -1,5 +1,6 @@
 #include "newAssignmentDialog.h"
 #include "ui_newassignmentdialog.h"
+#include "assignmentsDialog.h"
 
 NewAssignmentDialog::NewAssignmentDialog(UIHandler& handler, QWidget *parent) :
     QDialog(parent), uiHandler(handler),
@@ -15,7 +16,9 @@ NewAssignmentDialog::~NewAssignmentDialog() {
 }
 
 void NewAssignmentDialog::on_btnAssign_clicked() {
-
+  uiHandler.newAssignment(ui->cmbCourse, ui->cmbProfessor);
+  ((AssignmentsDialog*)(parent()))->refresh();
+  close();
 }
 
 void NewAssignmentDialog::on_btnExit_clicked() {

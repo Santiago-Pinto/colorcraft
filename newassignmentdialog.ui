@@ -6,73 +6,86 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>290</width>
-    <height>78</height>
+    <width>431</width>
+    <height>105</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QComboBox" name="cmbProfessor">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>20</y>
+     <width>181</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Profesor</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="btnAssign">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>171</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Asignar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnExit">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>60</y>
+     <width>171</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbSubject">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>20</y>
+     <width>131</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>Materia</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cmbCourse">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>271</width>
-     <height>62</height>
+     <y>20</y>
+     <width>81</width>
+     <height>25</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QComboBox" name="cmbCourse">
-        <item>
-         <property name="text">
-          <string>Curso</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="cmbSubject">
-        <item>
-         <property name="text">
-          <string>Materia</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="cmbProfessor">
-        <item>
-         <property name="text">
-          <string>Profesor</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QPushButton" name="btnAssign">
-        <property name="text">
-         <string>Asignar</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnExit">
-        <property name="text">
-         <string>Salir</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   <item>
+    <property name="text">
+     <string>Curso</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

@@ -15,73 +15,41 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_NewAssignmentDialog
 {
 public:
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QComboBox *cmbCourse;
-    QComboBox *cmbSubject;
     QComboBox *cmbProfessor;
-    QHBoxLayout *horizontalLayout_2;
     QPushButton *btnAssign;
     QPushButton *btnExit;
+    QComboBox *cmbSubject;
+    QComboBox *cmbCourse;
 
     void setupUi(QDialog *NewAssignmentDialog)
     {
         if (NewAssignmentDialog->objectName().isEmpty())
             NewAssignmentDialog->setObjectName(QStringLiteral("NewAssignmentDialog"));
-        NewAssignmentDialog->resize(290, 78);
-        layoutWidget = new QWidget(NewAssignmentDialog);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 271, 62));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        cmbCourse = new QComboBox(layoutWidget);
-        cmbCourse->setObjectName(QStringLiteral("cmbCourse"));
-
-        horizontalLayout->addWidget(cmbCourse);
-
-        cmbSubject = new QComboBox(layoutWidget);
-        cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
-
-        horizontalLayout->addWidget(cmbSubject);
-
-        cmbProfessor = new QComboBox(layoutWidget);
+        NewAssignmentDialog->resize(431, 105);
+        cmbProfessor = new QComboBox(NewAssignmentDialog);
         cmbProfessor->setObjectName(QStringLiteral("cmbProfessor"));
-
-        horizontalLayout->addWidget(cmbProfessor);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        btnAssign = new QPushButton(layoutWidget);
+        cmbProfessor->setGeometry(QRect(240, 20, 181, 25));
+        btnAssign = new QPushButton(NewAssignmentDialog);
         btnAssign->setObjectName(QStringLiteral("btnAssign"));
-
-        horizontalLayout_2->addWidget(btnAssign);
-
-        btnExit = new QPushButton(layoutWidget);
+        btnAssign->setGeometry(QRect(30, 60, 171, 25));
+        btnExit = new QPushButton(NewAssignmentDialog);
         btnExit->setObjectName(QStringLiteral("btnExit"));
-
-        horizontalLayout_2->addWidget(btnExit);
-
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
+        btnExit->setGeometry(QRect(210, 60, 171, 25));
+        cmbSubject = new QComboBox(NewAssignmentDialog);
+        cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
+        cmbSubject->setGeometry(QRect(100, 20, 131, 25));
+        cmbSubject->setFrame(true);
+        cmbCourse = new QComboBox(NewAssignmentDialog);
+        cmbCourse->setObjectName(QStringLiteral("cmbCourse"));
+        cmbCourse->setGeometry(QRect(10, 20, 81, 25));
 
         retranslateUi(NewAssignmentDialog);
 
@@ -91,20 +59,20 @@ public:
     void retranslateUi(QDialog *NewAssignmentDialog)
     {
         NewAssignmentDialog->setWindowTitle(QApplication::translate("NewAssignmentDialog", "Dialog", Q_NULLPTR));
-        cmbCourse->clear();
-        cmbCourse->insertItems(0, QStringList()
-         << QApplication::translate("NewAssignmentDialog", "Curso", Q_NULLPTR)
-        );
-        cmbSubject->clear();
-        cmbSubject->insertItems(0, QStringList()
-         << QApplication::translate("NewAssignmentDialog", "Materia", Q_NULLPTR)
-        );
         cmbProfessor->clear();
         cmbProfessor->insertItems(0, QStringList()
          << QApplication::translate("NewAssignmentDialog", "Profesor", Q_NULLPTR)
         );
         btnAssign->setText(QApplication::translate("NewAssignmentDialog", "Asignar", Q_NULLPTR));
         btnExit->setText(QApplication::translate("NewAssignmentDialog", "Salir", Q_NULLPTR));
+        cmbSubject->clear();
+        cmbSubject->insertItems(0, QStringList()
+         << QApplication::translate("NewAssignmentDialog", "Materia", Q_NULLPTR)
+        );
+        cmbCourse->clear();
+        cmbCourse->insertItems(0, QStringList()
+         << QApplication::translate("NewAssignmentDialog", "Curso", Q_NULLPTR)
+        );
     } // retranslateUi
 
 };

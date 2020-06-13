@@ -16,6 +16,7 @@ class AssignmentsDialog : public QDialog
 public:
     explicit AssignmentsDialog(UIHandler& handler, QWidget *parent = nullptr);
     ~AssignmentsDialog();
+    void refresh();
 
 private slots:
     void on_btnNew_clicked();
@@ -25,7 +26,6 @@ private:
     Ui::AssignmentsDialog *ui;
     NewAssignmentDialog* newAssignmentDialog;
     UIHandler& uiHandler;
-    void refresh();
 };
 
 #endif // ASSIGNMENTSDIALOG_H

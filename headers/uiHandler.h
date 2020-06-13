@@ -44,6 +44,7 @@ class UIHandler {
     void displayAvailability(Grid*& grid, QString& id);
 
     //Assignments methods
+    void newAssignment(QComboBox*& cmbCourse, QComboBox*& cmbProfessor);
     void displayAssignments(Grid*& grid);
     void deleteAssignment(QString& course,QString& professor,QString& subject);
 

@@ -4,6 +4,7 @@
 #define NUMBER_OF_CLASSES 3
 using std::vector;
 using std::string;
+using std::to_string;
 
 string UIHandler::convertToStdString(QString& qString) {
   return qString.toUtf8().constData();
@@ -60,7 +61,7 @@ void UIHandler::loadComboBoxWithProfessors(QComboBox*& cmbProfessor,
 
   string subject = cmbHandler.getValue(cmbSubject);
   for(auto item : this->system.getProfessors(subject))
-    cmbHandler.addItem(cmbProfessor, item.getName());
+    cmbHandler.addItem(cmbProfessor, to_string(item.getId()) + "-" + item.getName());
 }
 
 
@@ -117,6 +118,15 @@ void UIHandler::displayAvailability(Grid*& grid, QString& id) {
 }
 
 //                 Assignments methods
+
+void UIHandler::newAssignment(QComboBox*& cmbCourse, QComboBox*& cmbProfessor) {
+  string course = cmbHandler.getValue(cmbCourse);
+  string professor = cmbHandler.getValue(cmbProfessor);
+  size_t end = professor.find("-", 0);
+  string profId = professor.substr(0, end);
+  system.newAssignment(course, profId);
+}
+
 void UIHandler::displayAssignments(Grid*& grid) {
   vector<string> assignments = system.getAssignments();
   gridHandler.giveFormat(grid, assignments.size(), 3);//3 is the number of fields retrieved

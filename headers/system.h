@@ -46,6 +46,7 @@ class System {
 
     //Assignments methods
     std::vector<std::string> getAssignments();
+    void newAssignment(std::string& course, std::string& professor);
     void deleteAssignment(std::string& strCourse,
                           std::string& strProfessor,
                           std::string& strSubject);

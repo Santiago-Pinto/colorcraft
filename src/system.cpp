@@ -147,6 +147,14 @@ vector<string> System::getAssignments() {
   return records;
 }
 
+
+void System::newAssignment(string& course, string& profId) {
+  string query = "INSERT INTO asignaciones (profId, curso) "
+                 "VALUES ("+ profId +", '" + course + "');";
+  dataHandler.execute(query);
+}
+
+
 void System::deleteAssignment(string& strCourse,
                               string& strProfessor,string& strSubject) {
   string query = "DELETE FROM asignaciones "
