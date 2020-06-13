@@ -16,6 +16,10 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 MainWindow::~MainWindow() {
+    delete coloringDialog;
+    delete subjectsDialog;
+    delete professorsDialog;
+    delete assignmentsDialog;
     delete ui;
 }
 

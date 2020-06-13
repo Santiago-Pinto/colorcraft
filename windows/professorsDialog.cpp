@@ -13,6 +13,7 @@ ProfessorsDialog::ProfessorsDialog(UIHandler& handler, QWidget *parent) :
 }
 
 ProfessorsDialog::~ProfessorsDialog(){
+    delete availabilityCheckView;
     delete ui;
 }
 

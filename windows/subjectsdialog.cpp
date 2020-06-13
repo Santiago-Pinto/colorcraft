@@ -20,6 +20,8 @@ void SubjectsDialog::refresh() {
 }
 
 SubjectsDialog::~SubjectsDialog() {
+    delete subjectInputDialog;
+    delete subjectChangeDialog;
     delete ui;
 }
 
