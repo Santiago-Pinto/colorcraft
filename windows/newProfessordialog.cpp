@@ -3,13 +3,16 @@
 
 newProfessorDialog::newProfessorDialog(UIHandler& handler, QWidget *parent) :
     QDialog(parent), uiHandler(handler),
-    ui(new Ui::newProfessorDialog)
-{
+    ui(new Ui::newProfessorDialog) {
     ui->setupUi(this);
+    setWindowTitle("Nuevo Profesor");
+    QStringList titles;
+    titles << "Lunes" << "Martes" << "Miercoles" << "Jueves" << "Viernes";
+    uiHandler.setGridTitles(ui->grdAvailability, titles);
+    uiHandler.loadComboBoxWithSubjects(ui->cmbSubject);
 }
 
-newProfessorDialog::~newProfessorDialog()
-{
+newProfessorDialog::~newProfessorDialog() {
     delete ui;
 }
 
