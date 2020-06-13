@@ -27,6 +27,8 @@ void newProfessorDialog::on_grdAvailability_cellClicked(int row, int column) {
 }
 
 void newProfessorDialog::on_btnAccept_clicked() {
+  int rows = ui->grdAvailability->rowCount();
+  int cols = ui->grdAvailability->columnCount();
 
 }
 
