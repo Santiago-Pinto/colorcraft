@@ -16,6 +16,7 @@ class ProfessorsDialog : public QDialog {
 public:
     explicit ProfessorsDialog(UIHandler& handler, QWidget *parent = nullptr);
     ~ProfessorsDialog();
+    void refresh();
 
 private slots:
     void on_btnConsult_clicked();
@@ -28,7 +29,6 @@ private:
     AvailabilityCheckView* availabilityCheckView;
     newProfessorDialog* creationDialog;
     Ui::ProfessorsDialog *ui;
-    void refresh();
 };
 
 #endif // PROFESSORSDIALOG_H

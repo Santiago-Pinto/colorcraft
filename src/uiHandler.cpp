@@ -84,6 +84,12 @@ void UIHandler::deleteSubject(QString& subject) {
 }
 
 //                 Professors methods
+void UIHandler::newProfessor(QString& name, QComboBox*& cmbBox,
+                                              string& availability) {
+  string stdName = convertToStdString(name);
+  system.newProfessor(stdName, cmbHandler.getValue(cmbBox), availability);
+}
+
 void UIHandler::displayProfessors(Grid*& grid) {
   vector<Professor> professors = system.getProfessorsList();
   for (auto professor: professors)

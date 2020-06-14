@@ -42,7 +42,10 @@ class System {
     void deleteSubject(std::string& subjectName);
 
     //Professor methods
+    void newProfessor(std::string name, std::string subject,
+                                        std::string availability);
     void deleteProfessor(std::string& profId);
+
 
     //Assignments methods
     std::vector<std::string> getAssignments();

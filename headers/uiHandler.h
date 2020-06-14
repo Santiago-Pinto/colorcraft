@@ -39,6 +39,8 @@ class UIHandler {
     void deleteSubject(QString& subject);
 
     //Professors methods
+    void newProfessor(QString& name, QComboBox*& cmbBox,
+                                     std::string& availability);
     void displayProfessors(Grid*& grid);
     void deleteProfessor(QString& id);
     void displayAvailability(Grid*& grid, QString& id);

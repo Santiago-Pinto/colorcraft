@@ -71,14 +71,10 @@ vector<string> System::getCourses() {
 }
 
 vector<string> System::getSubjects() {
-  set<string> subjects;
-  for (auto professor: this->professorRecords) {
-    string subject = professor.getSubject();
-    if (subjects.find(subject) == subjects.end())
-      subjects.insert(subject);
-  }
-  vector<string> v(subjects.begin(), subjects.end());
-  return v;
+  vector<string> subjects;
+  for (Subject s: this->subjectRecords)
+    subjects.push_back(s.getName());
+  return subjects;
 }
 
 void System::newSubject(string& name, string& load) {
@@ -124,6 +120,18 @@ void System::refreshSubjects() {
 }
 
 //                    Professor methods
+
+void System::newProfessor(string name, string subject, string availability) {
+  string query = "INSERT INTO profesor (nombre, materia, disponibilidad) "
+                 "VALUES ('"+ name +"', '"+subject+ "', '"+availability + "');";
+  dataHandler.execute(query);
+
+  vector<string> pRecords;
+  this->professorRecords.clear();
+  dataHandler.execute("SELECT * FROM profesor;", pRecords);
+  this->professorRecords = parser::parseProfessors(pRecords);
+}
+
 void System::deleteProfessor(std::string& profId) {
   dataHandler.execute("DELETE FROM profesor WHERE legajo='" + profId +"';");
   dataHandler.execute("DELETE FROM asignaciones WHERE profId='" +profId+ "';");
