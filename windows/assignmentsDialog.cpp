@@ -21,7 +21,6 @@ AssignmentsDialog::AssignmentsDialog(UIHandler& handler, QWidget *parent) :
 
 AssignmentsDialog::~AssignmentsDialog()
 {
-    delete newAssignmentDialog;
     delete ui;
 }
 
