@@ -160,6 +160,11 @@ void System::newAssignment(string& course, string& profId) {
   string query = "INSERT INTO asignaciones (profId, curso) "
                  "VALUES ("+ profId +", '" + course + "');";
   dataHandler.execute(query);
+
+  vector<string> aRecords;
+  this->assignmentRecords.clear();
+  dataHandler.execute("SELECT * FROM asignaciones;", aRecords);
+  this->assignmentRecords = parser::parseAssignments(aRecords);
 }
 
 
