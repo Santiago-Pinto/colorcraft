@@ -12,6 +12,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    QPixmap pm("frame.jpg");
+    pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, pm);
+    this->setPalette(palette);
     setWindowTitle("Colorcraft");
 }
 

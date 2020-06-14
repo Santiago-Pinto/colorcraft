@@ -5,7 +5,12 @@ AvailabilityCheckView::AvailabilityCheckView(UIHandler& handler,
                                              QString& name,QWidget *parent) :
     QDialog(parent), uiHandler(handler), id(id),
     ui(new Ui::AvailabilityCheckView) {
-      ui->setupUi(this);
+    ui->setupUi(this);
+    QPixmap pm("frame.jpg");
+    pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, pm);
+    this->setPalette(palette);
     setWindowTitle("Disponibilidad horaria " + name);
     ui->lblProfessor->setText("("+ id + ")" + " " + name);
     showAvailability();

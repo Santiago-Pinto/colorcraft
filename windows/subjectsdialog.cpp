@@ -7,6 +7,11 @@ SubjectsDialog::SubjectsDialog(UIHandler& handler, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SubjectsDialog) {
     ui->setupUi(this);
+    QPixmap pm("frame.jpg");
+    pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, pm);
+    this->setPalette(palette);
     setWindowTitle("Asignaturas");
     QStringList titles;
     titles << "Codigo" << "Nombre" << "Carga horaria";

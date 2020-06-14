@@ -14,6 +14,12 @@ AssignmentsDialog::AssignmentsDialog(UIHandler& handler, QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Asignaciones de profesores y cursos");
     QStringList titles;
+    QPixmap pm("frame.jpg");
+    pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
+    
+    QPalette palette;
+    palette.setBrush(QPalette::Background, pm);
+    this->setPalette(palette);
     titles << "Curso" << "Profesor" << "Materia";
     uiHandler.setGridTitles(ui->grdAssignments, titles);
     uiHandler.displayAssignments(ui->grdAssignments);

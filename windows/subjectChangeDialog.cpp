@@ -8,6 +8,11 @@ SubjectChangeDialog::SubjectChangeDialog(UIHandler& handler, QString& subject,
     QDialog(parent), uiHandler(handler),
     ui(new Ui::SubjectChangeDialog) {
     ui->setupUi(this);
+    QPixmap pm("frame.jpg");
+    pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, pm);
+    this->setPalette(palette);
     setWindowTitle("Modificacion Asignatura");
     ui->lblSelected->setText(subject);
     ui->lblLoad->setText(load);
