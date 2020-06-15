@@ -58,15 +58,32 @@
       <item>
        <widget class="QPushButton" name="btnAccept">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(11, 117, 250);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color: beige;
-font: bold 14px;
-color: white;
-min-width: 10em;
-padding: 6px;</string>
+         <string notr="true">QPushButton {
+      background-color: rgb(11, 117, 250);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+ }
+
+
+QPushButton:hover:!pressed
+{
+      background-color: rgb(3, 7, 128);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+}
+</string>
         </property>
         <property name="text">
          <string>Aceptar</string>
@@ -76,15 +93,31 @@ padding: 6px;</string>
       <item>
        <widget class="QPushButton" name="btnExit">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(250, 78, 78);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color: beige;
-font: bold 14px;
-color: white;
-min-width: 10em;
-padding: 6px;</string>
+         <string notr="true">QPushButton {
+      background-color: rgb(250, 78, 78);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+ }
+
+
+QPushButton:hover:!pressed
+{
+      background-color: rgb(204, 0, 0);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+}</string>
         </property>
         <property name="text">
          <string>Salir</string>

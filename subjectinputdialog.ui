@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>242</width>
-    <height>127</height>
+    <width>248</width>
+    <height>129</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,15 +36,32 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(11, 117, 250);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color: beige;
-font: bold 14px;
-color: white;
-min-width: 10em;
-padding: 6px;</string>
+    <string notr="true">QPushButton {
+      background-color: rgb(11, 117, 250);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+ }
+
+
+QPushButton:hover:!pressed
+{
+      background-color: rgb(3, 7, 128);
+	  border-style: outset;
+	  border-width: 2px;
+	  border-radius: 10px;
+	  border-color: beige;
+	  font: bold 14px;
+	  color: white;
+	  min-width: 10em;
+	  padding: 6px;
+}
+</string>
    </property>
    <property name="text">
     <string>Aceptar</string>

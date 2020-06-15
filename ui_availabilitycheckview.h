@@ -65,15 +65,31 @@ public:
 
         btnExit = new QPushButton(layoutWidget);
         btnExit->setObjectName(QStringLiteral("btnExit"));
-        btnExit->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
-"border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 10px;\n"
-"border-color: beige;\n"
-"font: bold 14px;\n"
-"color: white;\n"
-"min-width: 10em;\n"
-"padding: 6px;"));
+        btnExit->setStyleSheet(QLatin1String("QPushButton {\n"
+"      background-color: rgb(250, 78, 78);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+" }\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(204, 0, 0);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+"}"));
 
         verticalLayout->addWidget(btnExit);
 

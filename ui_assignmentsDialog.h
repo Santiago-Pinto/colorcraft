@@ -60,29 +60,62 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         btnNew = new QPushButton(layoutWidget);
         btnNew->setObjectName(QStringLiteral("btnNew"));
-        btnNew->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
-"border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 10px;\n"
-"border-color: beige;\n"
-"font: bold 14px;\n"
-"color: white;\n"
-"min-width: 10em;\n"
-"padding: 6px;"));
+        btnNew->setStyleSheet(QLatin1String("QPushButton {\n"
+"      background-color: rgb(11, 117, 250);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+" }\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(3, 7, 128);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+"}\n"
+""));
 
         horizontalLayout->addWidget(btnNew);
 
         btnDelete = new QPushButton(layoutWidget);
         btnDelete->setObjectName(QStringLiteral("btnDelete"));
-        btnDelete->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
-"border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 10px;\n"
-"border-color: beige;\n"
-"font: bold 14px;\n"
-"color: white;\n"
-"min-width: 10em;\n"
-"padding: 6px;"));
+        btnDelete->setStyleSheet(QLatin1String("QPushButton {\n"
+"      background-color: rgb(250, 78, 78);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+" }\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(204, 0, 0);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+"}"));
 
         horizontalLayout->addWidget(btnDelete);
 

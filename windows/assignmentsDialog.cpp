@@ -16,7 +16,6 @@ AssignmentsDialog::AssignmentsDialog(UIHandler& handler, QWidget *parent) :
     QStringList titles;
     QPixmap pm("frame.jpg");
     pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
-    
     QPalette palette;
     palette.setBrush(QPalette::Background, pm);
     this->setPalette(palette);

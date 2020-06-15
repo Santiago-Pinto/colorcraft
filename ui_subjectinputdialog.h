@@ -42,22 +42,39 @@ public:
     {
         if (SubjectInputDialog->objectName().isEmpty())
             SubjectInputDialog->setObjectName(QStringLiteral("SubjectInputDialog"));
-        SubjectInputDialog->resize(242, 127);
+        SubjectInputDialog->resize(248, 129);
         txtAccept = new QPushButton(SubjectInputDialog);
         txtAccept->setObjectName(QStringLiteral("txtAccept"));
         txtAccept->setGeometry(QRect(10, 200, 379, 25));
         btnAccept = new QPushButton(SubjectInputDialog);
         btnAccept->setObjectName(QStringLiteral("btnAccept"));
         btnAccept->setGeometry(QRect(30, 90, 176, 31));
-        btnAccept->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
-"border-style: outset;\n"
-"border-width: 2px;\n"
-"border-radius: 10px;\n"
-"border-color: beige;\n"
-"font: bold 14px;\n"
-"color: white;\n"
-"min-width: 10em;\n"
-"padding: 6px;"));
+        btnAccept->setStyleSheet(QLatin1String("QPushButton {\n"
+"      background-color: rgb(11, 117, 250);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+" }\n"
+"\n"
+"\n"
+"QPushButton:hover:!pressed\n"
+"{\n"
+"      background-color: rgb(3, 7, 128);\n"
+"	  border-style: outset;\n"
+"	  border-width: 2px;\n"
+"	  border-radius: 10px;\n"
+"	  border-color: beige;\n"
+"	  font: bold 14px;\n"
+"	  color: white;\n"
+"	  min-width: 10em;\n"
+"	  padding: 6px;\n"
+"}\n"
+""));
         layoutWidget = new QWidget(SubjectInputDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(0, 10, 241, 71));
