@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>222</width>
-    <height>122</height>
+    <width>403</width>
+    <height>137</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>90</x>
+     <y>10</y>
      <width>220</width>
      <height>81</height>
     </rect>
@@ -81,11 +81,22 @@
   <widget class="QPushButton" name="btnAccept">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>89</width>
-     <height>25</height>
+     <x>10</x>
+     <y>100</y>
+     <width>176</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
    </property>
    <property name="text">
     <string>Aceptar</string>
@@ -97,11 +108,22 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>90</y>
-     <width>89</width>
-     <height>25</height>
+     <x>210</x>
+     <y>100</y>
+     <width>176</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(250, 78, 78);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
    </property>
    <property name="text">
     <string>Salir</string>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>244</width>
-    <height>119</height>
+    <width>241</width>
+    <height>127</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,17 +29,28 @@
   <widget class="QPushButton" name="btnAccept">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>30</x>
      <y>90</y>
-     <width>121</width>
-     <height>25</height>
+     <width>176</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
    </property>
    <property name="text">
     <string>Aceptar</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>

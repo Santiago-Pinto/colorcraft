@@ -31,7 +31,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *professorsBtn;
     QPushButton *assignmentsBtn;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *coloringBtn;
     QPushButton *subjectsBtn;
@@ -44,12 +44,12 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(576, 404);
+        MainWindow->resize(641, 404);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(100, 230, 391, 27));
+        layoutWidget->setGeometry(QRect(110, 230, 391, 34));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -57,47 +57,92 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         professorsBtn = new QPushButton(layoutWidget);
         professorsBtn->setObjectName(QStringLiteral("professorsBtn"));
+        professorsBtn->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout->addWidget(professorsBtn);
 
         assignmentsBtn = new QPushButton(layoutWidget);
         assignmentsBtn->setObjectName(QStringLiteral("assignmentsBtn"));
+        assignmentsBtn->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout->addWidget(assignmentsBtn);
 
-        layoutWidget1 = new QWidget(centralWidget);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(100, 270, 391, 27));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
+        layoutWidget_2 = new QWidget(centralWidget);
+        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+        layoutWidget_2->setGeometry(QRect(20, 270, 581, 34));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget_2);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        coloringBtn = new QPushButton(layoutWidget1);
+        coloringBtn = new QPushButton(layoutWidget_2);
         coloringBtn->setObjectName(QStringLiteral("coloringBtn"));
+        coloringBtn->setStyleSheet(QLatin1String("background-color: rgb(56, 234, 41);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(coloringBtn);
 
-        subjectsBtn = new QPushButton(layoutWidget1);
+        subjectsBtn = new QPushButton(layoutWidget_2);
         subjectsBtn->setObjectName(QStringLiteral("subjectsBtn"));
+        subjectsBtn->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(subjectsBtn);
 
-        exitBtn = new QPushButton(layoutWidget1);
+        exitBtn = new QPushButton(layoutWidget_2);
         exitBtn->setObjectName(QStringLiteral("exitBtn"));
+        exitBtn->setStyleSheet(QLatin1String("background-color:rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(exitBtn);
 
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(120, 90, 361, 111));
+        label->setGeometry(QRect(150, 90, 361, 111));
         label->setAutoFillBackground(false);
         label->setTextFormat(Qt::AutoText);
         label->setPixmap(QPixmap(QString::fromUtf8("title.png")));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 576, 22));
+        menuBar->setGeometry(QRect(0, 0, 641, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);

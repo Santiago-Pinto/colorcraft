@@ -39,10 +39,28 @@ public:
         cmbProfessor->setGeometry(QRect(240, 20, 181, 25));
         btnAssign = new QPushButton(NewAssignmentDialog);
         btnAssign->setObjectName(QStringLiteral("btnAssign"));
-        btnAssign->setGeometry(QRect(30, 60, 171, 25));
+        btnAssign->setGeometry(QRect(30, 60, 176, 41));
+        btnAssign->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
         btnExit = new QPushButton(NewAssignmentDialog);
         btnExit->setObjectName(QStringLiteral("btnExit"));
-        btnExit->setGeometry(QRect(210, 60, 171, 25));
+        btnExit->setGeometry(QRect(210, 60, 176, 41));
+        btnExit->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
         cmbSubject = new QComboBox(NewAssignmentDialog);
         cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
         cmbSubject->setGeometry(QRect(100, 20, 131, 25));

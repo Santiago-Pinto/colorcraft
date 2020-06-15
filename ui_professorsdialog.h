@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ProfessorsDialog
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QTableWidget *grdProfessors;
@@ -43,15 +43,15 @@ public:
         if (ProfessorsDialog->objectName().isEmpty())
             ProfessorsDialog->setObjectName(QStringLiteral("ProfessorsDialog"));
         ProfessorsDialog->resize(471, 279);
-        widget = new QWidget(ProfessorsDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(0, 0, 461, 270));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(ProfessorsDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 0, 461, 270));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        grdProfessors = new QTableWidget(widget);
+        grdProfessors = new QTableWidget(layoutWidget);
         grdProfessors->setObjectName(QStringLiteral("grdProfessors"));
         grdProfessors->setSelectionBehavior(QAbstractItemView::SelectRows);
 
@@ -67,13 +67,31 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        btnConsult = new QPushButton(widget);
+        btnConsult = new QPushButton(layoutWidget);
         btnConsult->setObjectName(QStringLiteral("btnConsult"));
+        btnConsult->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_3->addWidget(btnConsult);
 
-        btnNew = new QPushButton(widget);
+        btnNew = new QPushButton(layoutWidget);
         btnNew->setObjectName(QStringLiteral("btnNew"));
+        btnNew->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_3->addWidget(btnNew);
 
@@ -82,13 +100,31 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        btnModify = new QPushButton(widget);
+        btnModify = new QPushButton(layoutWidget);
         btnModify->setObjectName(QStringLiteral("btnModify"));
+        btnModify->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(btnModify);
 
-        btnRemove = new QPushButton(widget);
+        btnRemove = new QPushButton(layoutWidget);
         btnRemove->setObjectName(QStringLiteral("btnRemove"));
+        btnRemove->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(btnRemove);
 

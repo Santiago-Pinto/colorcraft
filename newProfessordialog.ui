@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>339</width>
+    <width>410</width>
     <height>347</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="lblAvailability">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>160</x>
      <y>90</y>
      <width>111</width>
      <height>17</height>
@@ -31,7 +31,7 @@
     <rect>
      <x>27</x>
      <y>110</y>
-     <width>281</width>
+     <width>371</width>
      <height>227</height>
     </rect>
    </property>
@@ -47,6 +47,17 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="btnAccept">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+        </property>
         <property name="text">
          <string>Aceptar</string>
         </property>
@@ -54,6 +65,17 @@
       </item>
       <item>
        <widget class="QPushButton" name="btnExit">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(250, 78, 78);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+        </property>
         <property name="text">
          <string>Salir</string>
         </property>
@@ -66,8 +88,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>40</x>
+     <y>20</y>
      <width>324</width>
      <height>31</height>
     </rect>
@@ -88,8 +110,8 @@
   <widget class="QComboBox" name="cmbSubject">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>50</y>
+     <x>40</x>
+     <y>60</y>
      <width>321</width>
      <height>25</height>
     </rect>

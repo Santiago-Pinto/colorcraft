@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_AssignmentsDialog
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *grdAssignments;
     QHBoxLayout *horizontalLayout;
@@ -37,14 +37,14 @@ public:
     {
         if (AssignmentsDialog->objectName().isEmpty())
             AssignmentsDialog->setObjectName(QStringLiteral("AssignmentsDialog"));
-        AssignmentsDialog->resize(280, 251);
-        widget = new QWidget(AssignmentsDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 10, 258, 227));
-        verticalLayout = new QVBoxLayout(widget);
+        AssignmentsDialog->resize(387, 251);
+        layoutWidget = new QWidget(AssignmentsDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 362, 227));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        grdAssignments = new QTableWidget(widget);
+        grdAssignments = new QTableWidget(layoutWidget);
         grdAssignments->setObjectName(QStringLiteral("grdAssignments"));
         grdAssignments->setSelectionMode(QAbstractItemView::SingleSelection);
         grdAssignments->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -53,13 +53,31 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        btnNew = new QPushButton(widget);
+        btnNew = new QPushButton(layoutWidget);
         btnNew->setObjectName(QStringLiteral("btnNew"));
+        btnNew->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout->addWidget(btnNew);
 
-        btnDelete = new QPushButton(widget);
+        btnDelete = new QPushButton(layoutWidget);
         btnDelete->setObjectName(QStringLiteral("btnDelete"));
+        btnDelete->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout->addWidget(btnDelete);
 

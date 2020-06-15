@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>576</width>
+    <width>641</width>
     <height>404</height>
    </rect>
   </property>
@@ -20,15 +20,26 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>230</y>
       <width>391</width>
-      <height>27</height>
+      <height>34</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="professorsBtn">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+       </property>
        <property name="text">
         <string>Profesores</string>
        </property>
@@ -36,6 +47,17 @@
      </item>
      <item>
       <widget class="QPushButton" name="assignmentsBtn">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+       </property>
        <property name="text">
         <string>Asignaciones</string>
        </property>
@@ -43,18 +65,29 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>20</x>
       <y>270</y>
-      <width>391</width>
-      <height>27</height>
+      <width>581</width>
+      <height>34</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="coloringBtn">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(56, 234, 41);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+       </property>
        <property name="text">
         <string>Armar Horario</string>
        </property>
@@ -62,6 +95,17 @@
      </item>
      <item>
       <widget class="QPushButton" name="subjectsBtn">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+       </property>
        <property name="text">
         <string>Asignaturas</string>
        </property>
@@ -69,6 +113,17 @@
      </item>
      <item>
       <widget class="QPushButton" name="exitBtn">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(250, 78, 78);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+       </property>
        <property name="text">
         <string>Salir</string>
        </property>
@@ -79,7 +134,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>150</x>
       <y>90</y>
       <width>361</width>
       <height>111</height>
@@ -104,7 +159,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>576</width>
+     <width>641</width>
      <height>22</height>
     </rect>
    </property>

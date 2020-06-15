@@ -45,10 +45,28 @@ public:
         centralWidget->setGeometry(QRect(0, 0, 581, 385));
         colorBtn = new QPushButton(centralWidget);
         colorBtn->setObjectName(QStringLiteral("colorBtn"));
-        colorBtn->setGeometry(QRect(190, 330, 89, 25));
+        colorBtn->setGeometry(QRect(120, 330, 176, 31));
+        colorBtn->setStyleSheet(QLatin1String("background-color: rgb(230, 19, 249);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
         exitBtn = new QPushButton(centralWidget);
         exitBtn->setObjectName(QStringLiteral("exitBtn"));
-        exitBtn->setGeometry(QRect(310, 330, 89, 25));
+        exitBtn->setGeometry(QRect(310, 330, 176, 31));
+        exitBtn->setStyleSheet(QLatin1String("background-color:rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
         scheduleGrd = new QTableWidget(centralWidget);
         scheduleGrd->setObjectName(QStringLiteral("scheduleGrd"));
         scheduleGrd->setGeometry(QRect(10, 30, 561, 192));

@@ -25,11 +25,22 @@
    <widget class="QPushButton" name="colorBtn">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>120</x>
       <y>330</y>
-      <width>89</width>
-      <height>25</height>
+      <width>176</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(230, 19, 249);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
     </property>
     <property name="text">
      <string>Colorear</string>
@@ -40,9 +51,20 @@
      <rect>
       <x>310</x>
       <y>330</y>
-      <width>89</width>
-      <height>25</height>
+      <width>176</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(250, 78, 78);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
     </property>
     <property name="text">
      <string>Salir</string>

@@ -52,16 +52,43 @@ public:
 
         newBtn = new QPushButton(layoutWidget);
         newBtn->setObjectName(QStringLiteral("newBtn"));
+        newBtn->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         verticalLayout_2->addWidget(newBtn);
 
         changesBtn = new QPushButton(layoutWidget);
         changesBtn->setObjectName(QStringLiteral("changesBtn"));
+        changesBtn->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         verticalLayout_2->addWidget(changesBtn);
 
         removeBtn = new QPushButton(layoutWidget);
         removeBtn->setObjectName(QStringLiteral("removeBtn"));
+        removeBtn->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         verticalLayout_2->addWidget(removeBtn);
 

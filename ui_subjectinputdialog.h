@@ -29,7 +29,7 @@ class Ui_SubjectInputDialog
 public:
     QPushButton *txtAccept;
     QPushButton *btnAccept;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -42,27 +42,36 @@ public:
     {
         if (SubjectInputDialog->objectName().isEmpty())
             SubjectInputDialog->setObjectName(QStringLiteral("SubjectInputDialog"));
-        SubjectInputDialog->resize(244, 119);
+        SubjectInputDialog->resize(241, 127);
         txtAccept = new QPushButton(SubjectInputDialog);
         txtAccept->setObjectName(QStringLiteral("txtAccept"));
         txtAccept->setGeometry(QRect(10, 200, 379, 25));
         btnAccept = new QPushButton(SubjectInputDialog);
         btnAccept->setObjectName(QStringLiteral("btnAccept"));
-        btnAccept->setGeometry(QRect(70, 90, 121, 25));
-        widget = new QWidget(SubjectInputDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(0, 10, 241, 71));
-        verticalLayout = new QVBoxLayout(widget);
+        btnAccept->setGeometry(QRect(30, 90, 176, 31));
+        btnAccept->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
+        layoutWidget = new QWidget(SubjectInputDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 10, 241, 71));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
 
-        txtName = new QTextEdit(widget);
+        txtName = new QTextEdit(layoutWidget);
         txtName->setObjectName(QStringLiteral("txtName"));
 
         horizontalLayout->addWidget(txtName);
@@ -72,12 +81,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        txtLoad = new QTextEdit(widget);
+        txtLoad = new QTextEdit(layoutWidget);
         txtLoad->setObjectName(QStringLiteral("txtLoad"));
 
         horizontalLayout_2->addWidget(txtLoad);

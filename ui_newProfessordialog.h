@@ -46,13 +46,13 @@ public:
     {
         if (newProfessorDialog->objectName().isEmpty())
             newProfessorDialog->setObjectName(QStringLiteral("newProfessorDialog"));
-        newProfessorDialog->resize(339, 347);
+        newProfessorDialog->resize(410, 347);
         lblAvailability = new QLabel(newProfessorDialog);
         lblAvailability->setObjectName(QStringLiteral("lblAvailability"));
-        lblAvailability->setGeometry(QRect(120, 90, 111, 17));
+        lblAvailability->setGeometry(QRect(160, 90, 111, 17));
         layoutWidget = new QWidget(newProfessorDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(27, 110, 281, 227));
+        layoutWidget->setGeometry(QRect(27, 110, 371, 227));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -66,11 +66,29 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         btnAccept = new QPushButton(layoutWidget);
         btnAccept->setObjectName(QStringLiteral("btnAccept"));
+        btnAccept->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(btnAccept);
 
         btnExit = new QPushButton(layoutWidget);
         btnExit->setObjectName(QStringLiteral("btnExit"));
+        btnExit->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         horizontalLayout_2->addWidget(btnExit);
 
@@ -79,7 +97,7 @@ public:
 
         layoutWidget1 = new QWidget(newProfessorDialog);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 10, 324, 31));
+        layoutWidget1->setGeometry(QRect(40, 20, 324, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -95,7 +113,7 @@ public:
 
         cmbSubject = new QComboBox(newProfessorDialog);
         cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
-        cmbSubject->setGeometry(QRect(10, 50, 321, 25));
+        cmbSubject->setGeometry(QRect(40, 60, 321, 25));
 
         retranslateUi(newProfessorDialog);
 

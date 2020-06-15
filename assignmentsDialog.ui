@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>280</width>
+    <width>387</width>
     <height>251</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>258</width>
+     <width>362</width>
      <height>227</height>
     </rect>
    </property>
@@ -37,6 +37,17 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="btnNew">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(11, 117, 250);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+        </property>
         <property name="text">
          <string>Nueva asignacion</string>
         </property>
@@ -44,6 +55,17 @@
       </item>
       <item>
        <widget class="QPushButton" name="btnDelete">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(250, 78, 78);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+color: white;
+min-width: 10em;
+padding: 6px;</string>
+        </property>
         <property name="text">
          <string>Eliminar</string>
         </property>

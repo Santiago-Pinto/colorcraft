@@ -46,10 +46,10 @@ public:
         if (SubjectChangeDialog->objectName().isEmpty())
             SubjectChangeDialog->setObjectName(QStringLiteral("SubjectChangeDialog"));
         SubjectChangeDialog->setEnabled(true);
-        SubjectChangeDialog->resize(222, 122);
+        SubjectChangeDialog->resize(403, 137);
         layoutWidget = new QWidget(SubjectChangeDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 220, 81));
+        layoutWidget->setGeometry(QRect(90, 10, 220, 81));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -100,11 +100,29 @@ public:
 
         btnAccept = new QPushButton(SubjectChangeDialog);
         btnAccept->setObjectName(QStringLiteral("btnAccept"));
-        btnAccept->setGeometry(QRect(20, 90, 89, 25));
+        btnAccept->setGeometry(QRect(10, 100, 176, 31));
+        btnAccept->setStyleSheet(QLatin1String("background-color: rgb(11, 117, 250);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
         btnExit = new QPushButton(SubjectChangeDialog);
         btnExit->setObjectName(QStringLiteral("btnExit"));
         btnExit->setEnabled(true);
-        btnExit->setGeometry(QRect(110, 90, 89, 25));
+        btnExit->setGeometry(QRect(210, 100, 176, 31));
+        btnExit->setStyleSheet(QLatin1String("background-color: rgb(250, 78, 78);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"border-color: beige;\n"
+"font: bold 14px;\n"
+"color: white;\n"
+"min-width: 10em;\n"
+"padding: 6px;"));
 
         retranslateUi(SubjectChangeDialog);
 
