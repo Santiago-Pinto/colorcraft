@@ -41,8 +41,11 @@ public:
         lblProfessor->setObjectName(QStringLiteral("lblProfessor"));
         lblProfessor->setGeometry(QRect(110, 20, 181, 17));
         QFont font;
-        font.setPointSize(13);
+        font.setBold(true);
+        font.setItalic(false);
+        font.setWeight(75);
         lblProfessor->setFont(font);
+        lblProfessor->setStyleSheet(QStringLiteral("font: bold 18px;"));
         lblProfessor->setTextFormat(Qt::PlainText);
         layoutWidget = new QWidget(AvailabilityCheckView);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));

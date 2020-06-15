@@ -42,7 +42,7 @@ public:
     {
         if (SubjectInputDialog->objectName().isEmpty())
             SubjectInputDialog->setObjectName(QStringLiteral("SubjectInputDialog"));
-        SubjectInputDialog->resize(241, 127);
+        SubjectInputDialog->resize(242, 127);
         txtAccept = new QPushButton(SubjectInputDialog);
         txtAccept->setObjectName(QStringLiteral("txtAccept"));
         txtAccept->setGeometry(QRect(10, 200, 379, 25));
@@ -68,6 +68,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral("font: bold 13px;"));
 
         horizontalLayout->addWidget(label);
 
@@ -83,6 +84,7 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral("font: bold 13px;"));
 
         horizontalLayout_2->addWidget(label_2);
 

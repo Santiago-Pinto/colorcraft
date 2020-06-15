@@ -30,6 +30,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">font: bold 14px;</string>
+        </property>
         <property name="text">
          <string>Materia:</string>
         </property>
@@ -37,6 +40,9 @@
       </item>
       <item>
        <widget class="QLabel" name="lblSelected">
+        <property name="styleSheet">
+         <string notr="true">font: bold 14px;</string>
+        </property>
         <property name="text">
          <string>Seleccionada</string>
         </property>
@@ -48,6 +54,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
        <widget class="QLabel" name="label_5">
+        <property name="styleSheet">
+         <string notr="true">font: bold 14px;</string>
+        </property>
         <property name="text">
          <string>Carga horaria actual:</string>
         </property>
@@ -55,6 +64,9 @@
       </item>
       <item>
        <widget class="QLabel" name="lblLoad">
+        <property name="styleSheet">
+         <string notr="true">font: bold 14px;</string>
+        </property>
         <property name="text">
          <string>0</string>
         </property>
@@ -66,8 +78,11 @@
      <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
        <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">font: bold 13px;</string>
+        </property>
         <property name="text">
-         <string>Nueva carga horaria:</string>
+         <string>Nueva carga:</string>
         </property>
        </widget>
       </item>

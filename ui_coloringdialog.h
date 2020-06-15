@@ -81,7 +81,8 @@ public:
         coursesCmbBox->setGeometry(QRect(380, 260, 111, 25));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(60, 260, 161, 17));
+        label->setGeometry(QRect(30, 260, 191, 20));
+        label->setStyleSheet(QStringLiteral("font: bold 14px;"));
         textEdit = new QTextEdit(centralWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(230, 260, 51, 21));

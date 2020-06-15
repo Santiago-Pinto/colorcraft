@@ -57,11 +57,13 @@ public:
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setStyleSheet(QStringLiteral("font: bold 14px;"));
 
         horizontalLayout_4->addWidget(label_4);
 
         lblSelected = new QLabel(layoutWidget);
         lblSelected->setObjectName(QStringLiteral("lblSelected"));
+        lblSelected->setStyleSheet(QStringLiteral("font: bold 14px;"));
 
         horizontalLayout_4->addWidget(lblSelected);
 
@@ -72,11 +74,13 @@ public:
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QStringLiteral("font: bold 14px;"));
 
         horizontalLayout_5->addWidget(label_5);
 
         lblLoad = new QLabel(layoutWidget);
         lblLoad->setObjectName(QStringLiteral("lblLoad"));
+        lblLoad->setStyleSheet(QStringLiteral("font: bold 14px;"));
 
         horizontalLayout_5->addWidget(lblLoad);
 
@@ -87,6 +91,7 @@ public:
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setStyleSheet(QStringLiteral("font: bold 13px;"));
 
         horizontalLayout_6->addWidget(label_6);
 
@@ -136,7 +141,7 @@ public:
         lblSelected->setText(QApplication::translate("SubjectChangeDialog", "Seleccionada", Q_NULLPTR));
         label_5->setText(QApplication::translate("SubjectChangeDialog", "Carga horaria actual:", Q_NULLPTR));
         lblLoad->setText(QApplication::translate("SubjectChangeDialog", "0", Q_NULLPTR));
-        label_6->setText(QApplication::translate("SubjectChangeDialog", "Nueva carga horaria:", Q_NULLPTR));
+        label_6->setText(QApplication::translate("SubjectChangeDialog", "Nueva carga:", Q_NULLPTR));
         btnAccept->setText(QApplication::translate("SubjectChangeDialog", "Aceptar", Q_NULLPTR));
         btnExit->setText(QApplication::translate("SubjectChangeDialog", "Salir", Q_NULLPTR));
     } // retranslateUi

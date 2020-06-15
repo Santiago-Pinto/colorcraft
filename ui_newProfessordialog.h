@@ -49,7 +49,8 @@ public:
         newProfessorDialog->resize(410, 347);
         lblAvailability = new QLabel(newProfessorDialog);
         lblAvailability->setObjectName(QStringLiteral("lblAvailability"));
-        lblAvailability->setGeometry(QRect(160, 90, 111, 17));
+        lblAvailability->setGeometry(QRect(160, 90, 121, 17));
+        lblAvailability->setStyleSheet(QStringLiteral("font: bold 14px;"));
         layoutWidget = new QWidget(newProfessorDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(27, 110, 371, 227));
@@ -108,6 +109,7 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         lblName = new QLabel(layoutWidget1);
         lblName->setObjectName(QStringLiteral("lblName"));
+        lblName->setStyleSheet(QStringLiteral("font: bold 14px;"));
 
         horizontalLayout->addWidget(lblName);
 
