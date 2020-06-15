@@ -52,6 +52,11 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         grdAvailability = new QTableWidget(layoutWidget);
         grdAvailability->setObjectName(QStringLiteral("grdAvailability"));
+        grdAvailability->setStyleSheet(QLatin1String("QHeaderView::section {\n"
+"    background-color: rgb(11, 117, 250);\n"
+"    height: 32px;\n"
+"	border-bottom-style: dotted;\n"
+"}"));
 
         verticalLayout->addWidget(grdAvailability);
 

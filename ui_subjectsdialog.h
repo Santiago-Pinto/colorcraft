@@ -46,6 +46,11 @@ public:
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         grdSubjects = new QTableWidget(layoutWidget);
         grdSubjects->setObjectName(QStringLiteral("grdSubjects"));
+        grdSubjects->setStyleSheet(QLatin1String("QHeaderView::section {\n"
+"    background-color: rgb(11, 117, 250);\n"
+"    height: 32px;\n"
+"	border-bottom-style: dotted;\n"
+"}"));
         grdSubjects->setSelectionBehavior(QAbstractItemView::SelectRows);
 
         verticalLayout_2->addWidget(grdSubjects);

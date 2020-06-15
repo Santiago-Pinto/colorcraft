@@ -79,6 +79,13 @@ padding: 6px;</string>
       <height>192</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+    background-color: rgb(11, 117, 250);
+    height: 32px;
+	border-bottom-style: dotted;
+}</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="coursesCmbBox">
     <property name="enabled">

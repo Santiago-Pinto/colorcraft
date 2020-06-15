@@ -41,6 +41,13 @@
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QHeaderView::section {
+    background-color: rgb(11, 117, 250);
+    height: 32px;
+	border-bottom-style: dotted;
+}</string>
+      </property>
      </widget>
     </item>
     <item>

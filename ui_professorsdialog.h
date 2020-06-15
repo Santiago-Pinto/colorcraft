@@ -53,6 +53,11 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         grdProfessors = new QTableWidget(layoutWidget);
         grdProfessors->setObjectName(QStringLiteral("grdProfessors"));
+        grdProfessors->setStyleSheet(QLatin1String("QHeaderView::section {\n"
+"    background-color: rgb(11, 117, 250);\n"
+"    height: 32px;\n"
+"	border-bottom-style: dotted;\n"
+"}"));
         grdProfessors->setSelectionBehavior(QAbstractItemView::SelectRows);
 
         verticalLayout->addWidget(grdProfessors);

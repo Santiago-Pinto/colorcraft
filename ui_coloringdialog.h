@@ -70,6 +70,11 @@ public:
         scheduleGrd = new QTableWidget(centralWidget);
         scheduleGrd->setObjectName(QStringLiteral("scheduleGrd"));
         scheduleGrd->setGeometry(QRect(10, 30, 561, 192));
+        scheduleGrd->setStyleSheet(QLatin1String("QHeaderView::section {\n"
+"    background-color: rgb(11, 117, 250);\n"
+"    height: 32px;\n"
+"	border-bottom-style: dotted;\n"
+"}"));
         coursesCmbBox = new QComboBox(centralWidget);
         coursesCmbBox->setObjectName(QStringLiteral("coursesCmbBox"));
         coursesCmbBox->setEnabled(false);
