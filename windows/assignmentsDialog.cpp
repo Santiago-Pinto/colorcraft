@@ -14,7 +14,7 @@ AssignmentsDialog::AssignmentsDialog(UIHandler& handler, QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Asignaciones de profesores y cursos");
     QStringList titles;
-    QPixmap pm("frame.jpg");
+    QPixmap pm("whitebckg.jpg");
     pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, pm);

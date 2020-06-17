@@ -6,7 +6,7 @@ AvailabilityCheckView::AvailabilityCheckView(UIHandler& handler,
     QDialog(parent), uiHandler(handler), id(id),
     ui(new Ui::AvailabilityCheckView) {
     ui->setupUi(this);
-    QPixmap pm("frame.jpg");
+    QPixmap pm("whitebckg.jpg");
     pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, pm);

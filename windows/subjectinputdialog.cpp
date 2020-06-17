@@ -7,7 +7,7 @@ SubjectInputDialog::SubjectInputDialog(UIHandler& handler, QWidget *parent) :
     QDialog(parent), uiHandler(handler),
     ui(new Ui::SubjectInputDialog){
     ui->setupUi(this);
-    QPixmap pm("frame.jpg");
+    QPixmap pm("whitebckg.jpg");
     pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, pm);

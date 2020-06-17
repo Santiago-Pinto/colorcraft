@@ -5,7 +5,7 @@ ProfessorsDialog::ProfessorsDialog(UIHandler& handler, QWidget *parent) :
     uiHandler(handler), QDialog(parent),
     ui(new Ui::ProfessorsDialog) {
     ui->setupUi(this);
-    QPixmap pm("frame.jpg");
+    QPixmap pm("whitebckg.jpg");
     pm = pm.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, pm);
