@@ -37,10 +37,10 @@ public:
     {
         if (AssignmentsDialog->objectName().isEmpty())
             AssignmentsDialog->setObjectName(QStringLiteral("AssignmentsDialog"));
-        AssignmentsDialog->resize(387, 251);
+        AssignmentsDialog->resize(402, 251);
         layoutWidget = new QWidget(AssignmentsDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 362, 227));
+        layoutWidget->setGeometry(QRect(10, 10, 381, 227));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);

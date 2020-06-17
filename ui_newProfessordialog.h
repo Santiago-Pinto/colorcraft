@@ -46,14 +46,14 @@ public:
     {
         if (newProfessorDialog->objectName().isEmpty())
             newProfessorDialog->setObjectName(QStringLiteral("newProfessorDialog"));
-        newProfessorDialog->resize(410, 347);
+        newProfessorDialog->resize(386, 347);
         lblAvailability = new QLabel(newProfessorDialog);
         lblAvailability->setObjectName(QStringLiteral("lblAvailability"));
-        lblAvailability->setGeometry(QRect(160, 90, 121, 17));
+        lblAvailability->setGeometry(QRect(140, 90, 121, 17));
         lblAvailability->setStyleSheet(QStringLiteral("font: bold 14px;"));
         layoutWidget = new QWidget(newProfessorDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(27, 110, 371, 227));
+        layoutWidget->setGeometry(QRect(7, 110, 371, 227));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -136,7 +136,7 @@ public:
 
         layoutWidget1 = new QWidget(newProfessorDialog);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(40, 20, 324, 31));
+        layoutWidget1->setGeometry(QRect(20, 20, 324, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -153,7 +153,7 @@ public:
 
         cmbSubject = new QComboBox(newProfessorDialog);
         cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
-        cmbSubject->setGeometry(QRect(40, 60, 321, 25));
+        cmbSubject->setGeometry(QRect(20, 60, 321, 25));
 
         retranslateUi(newProfessorDialog);
 

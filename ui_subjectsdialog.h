@@ -37,10 +37,10 @@ public:
         if (SubjectsDialog->objectName().isEmpty())
             SubjectsDialog->setObjectName(QStringLiteral("SubjectsDialog"));
         SubjectsDialog->setEnabled(true);
-        SubjectsDialog->resize(297, 330);
+        SubjectsDialog->resize(313, 333);
         layoutWidget = new QWidget(SubjectsDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 10, 291, 318));
+        layoutWidget->setGeometry(QRect(10, 10, 291, 318));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);

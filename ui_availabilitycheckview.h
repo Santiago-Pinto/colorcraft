@@ -26,27 +26,17 @@ QT_BEGIN_NAMESPACE
 class Ui_AvailabilityCheckView
 {
 public:
-    QLabel *lblProfessor;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *grdAvailability;
     QPushButton *btnExit;
+    QLabel *lblProfessor;
 
     void setupUi(QDialog *AvailabilityCheckView)
     {
         if (AvailabilityCheckView->objectName().isEmpty())
             AvailabilityCheckView->setObjectName(QStringLiteral("AvailabilityCheckView"));
-        AvailabilityCheckView->resize(293, 274);
-        lblProfessor = new QLabel(AvailabilityCheckView);
-        lblProfessor->setObjectName(QStringLiteral("lblProfessor"));
-        lblProfessor->setGeometry(QRect(110, 20, 181, 17));
-        QFont font;
-        font.setBold(true);
-        font.setItalic(false);
-        font.setWeight(75);
-        lblProfessor->setFont(font);
-        lblProfessor->setStyleSheet(QStringLiteral("font: bold 18px;"));
-        lblProfessor->setTextFormat(Qt::PlainText);
+        AvailabilityCheckView->resize(278, 274);
         layoutWidget = new QWidget(AvailabilityCheckView);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 40, 258, 225));
@@ -93,6 +83,16 @@ public:
 
         verticalLayout->addWidget(btnExit);
 
+        lblProfessor = new QLabel(AvailabilityCheckView);
+        lblProfessor->setObjectName(QStringLiteral("lblProfessor"));
+        lblProfessor->setGeometry(QRect(90, 20, 181, 17));
+        QFont font;
+        font.setBold(true);
+        font.setItalic(false);
+        font.setWeight(75);
+        lblProfessor->setFont(font);
+        lblProfessor->setStyleSheet(QStringLiteral("font: bold 18px;"));
+        lblProfessor->setTextFormat(Qt::PlainText);
 
         retranslateUi(AvailabilityCheckView);
 
@@ -102,8 +102,8 @@ public:
     void retranslateUi(QDialog *AvailabilityCheckView)
     {
         AvailabilityCheckView->setWindowTitle(QApplication::translate("AvailabilityCheckView", "Dialog", Q_NULLPTR));
-        lblProfessor->setText(QApplication::translate("AvailabilityCheckView", "Profesor", Q_NULLPTR));
         btnExit->setText(QApplication::translate("AvailabilityCheckView", "Salir", Q_NULLPTR));
+        lblProfessor->setText(QApplication::translate("AvailabilityCheckView", "Profesor", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -42,7 +42,7 @@ public:
     {
         if (ProfessorsDialog->objectName().isEmpty())
             ProfessorsDialog->setObjectName(QStringLiteral("ProfessorsDialog"));
-        ProfessorsDialog->resize(471, 279);
+        ProfessorsDialog->resize(461, 279);
         layoutWidget = new QWidget(ProfessorsDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(0, 0, 461, 270));

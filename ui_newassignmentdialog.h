@@ -15,8 +15,10 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,22 +26,36 @@ class Ui_NewAssignmentDialog
 {
 public:
     QComboBox *cmbProfessor;
-    QPushButton *btnAssign;
-    QPushButton *btnExit;
     QComboBox *cmbSubject;
     QComboBox *cmbCourse;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *btnAssign;
+    QPushButton *btnExit;
 
     void setupUi(QDialog *NewAssignmentDialog)
     {
         if (NewAssignmentDialog->objectName().isEmpty())
             NewAssignmentDialog->setObjectName(QStringLiteral("NewAssignmentDialog"));
-        NewAssignmentDialog->resize(431, 105);
+        NewAssignmentDialog->resize(440, 105);
         cmbProfessor = new QComboBox(NewAssignmentDialog);
         cmbProfessor->setObjectName(QStringLiteral("cmbProfessor"));
         cmbProfessor->setGeometry(QRect(240, 20, 181, 25));
-        btnAssign = new QPushButton(NewAssignmentDialog);
+        cmbSubject = new QComboBox(NewAssignmentDialog);
+        cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
+        cmbSubject->setGeometry(QRect(100, 20, 131, 25));
+        cmbSubject->setFrame(true);
+        cmbCourse = new QComboBox(NewAssignmentDialog);
+        cmbCourse->setObjectName(QStringLiteral("cmbCourse"));
+        cmbCourse->setGeometry(QRect(10, 20, 81, 25));
+        widget = new QWidget(NewAssignmentDialog);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(30, 60, 381, 34));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        btnAssign = new QPushButton(widget);
         btnAssign->setObjectName(QStringLiteral("btnAssign"));
-        btnAssign->setGeometry(QRect(30, 60, 176, 41));
         btnAssign->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(11, 117, 250);\n"
 "	  border-style: outset;\n"
@@ -66,9 +82,11 @@ public:
 "	  padding: 6px;\n"
 "}\n"
 ""));
-        btnExit = new QPushButton(NewAssignmentDialog);
+
+        horizontalLayout->addWidget(btnAssign);
+
+        btnExit = new QPushButton(widget);
         btnExit->setObjectName(QStringLiteral("btnExit"));
-        btnExit->setGeometry(QRect(210, 60, 176, 41));
         btnExit->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(250, 78, 78);\n"
 "	  border-style: outset;\n"
@@ -94,13 +112,9 @@ public:
 "	  min-width: 10em;\n"
 "	  padding: 6px;\n"
 "}"));
-        cmbSubject = new QComboBox(NewAssignmentDialog);
-        cmbSubject->setObjectName(QStringLiteral("cmbSubject"));
-        cmbSubject->setGeometry(QRect(100, 20, 131, 25));
-        cmbSubject->setFrame(true);
-        cmbCourse = new QComboBox(NewAssignmentDialog);
-        cmbCourse->setObjectName(QStringLiteral("cmbCourse"));
-        cmbCourse->setGeometry(QRect(10, 20, 81, 25));
+
+        horizontalLayout->addWidget(btnExit);
+
 
         retranslateUi(NewAssignmentDialog);
 
@@ -114,8 +128,6 @@ public:
         cmbProfessor->insertItems(0, QStringList()
          << QApplication::translate("NewAssignmentDialog", "Profesor", Q_NULLPTR)
         );
-        btnAssign->setText(QApplication::translate("NewAssignmentDialog", "Asignar", Q_NULLPTR));
-        btnExit->setText(QApplication::translate("NewAssignmentDialog", "Salir", Q_NULLPTR));
         cmbSubject->clear();
         cmbSubject->insertItems(0, QStringList()
          << QApplication::translate("NewAssignmentDialog", "Materia", Q_NULLPTR)
@@ -124,6 +136,8 @@ public:
         cmbCourse->insertItems(0, QStringList()
          << QApplication::translate("NewAssignmentDialog", "Curso", Q_NULLPTR)
         );
+        btnAssign->setText(QApplication::translate("NewAssignmentDialog", "Asignar", Q_NULLPTR));
+        btnExit->setText(QApplication::translate("NewAssignmentDialog", "Salir", Q_NULLPTR));
     } // retranslateUi
 
 };
