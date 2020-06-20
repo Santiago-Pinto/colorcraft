@@ -10,35 +10,8 @@ using std::random_shuffle;
 using std::string;
 using std::to_string;
 
-short Painter::chooseColor(Node* node) {
-  short currentColor = 1;
-  vector<Node*> adjacents = node->getAdjacents();
-  unsigned int i = 0;
-  while (i< adjacents.size()) {
-    Node* neighbor = adjacents[i];
-
-    if (neighbor->getColor() ==  currentColor) {
-      i = 0;
-      ++currentColor;
-    } else {
-      ++i;
-    }
-  }
-  return currentColor;
-}
-
-void Painter::resetColors() {
-  for (unsigned int i = 0; i < this->nodes.size(); ++i)
-    nodes[i]->assignColor(0);
-}
-
-
-Painter::Painter() {
-  //Ctor
-}
-
-Coloring Painter::paint(unsigned int numberOfIterations,
-                        unsigned int colorBound, nodeVec& nodes) {
+Coloring Painter::startup(unsigned int numberOfIterations,
+                          unsigned int colorBound, nodeVec& nodes) {
   set<short> usedColors;
   unsigned int functional = 0;
   Coloring bestColoring;
@@ -70,6 +43,40 @@ Coloring Painter::paint(unsigned int numberOfIterations,
   }
   this->lastColoring = bestColoring;
   return bestColoring;
+}
+
+
+short Painter::chooseColor(Node* node) {
+  short currentColor = 1;
+  vector<Node*> adjacents = node->getAdjacents();
+  unsigned int i = 0;
+  while (i< adjacents.size()) {
+    Node* neighbor = adjacents[i];
+
+    if (neighbor->getColor() ==  currentColor) {
+      i = 0;
+      ++currentColor;
+    } else {
+      ++i;
+    }
+  }
+  return currentColor;
+}
+
+void Painter::resetColors() {
+  for (unsigned int i = 0; i < this->nodes.size(); ++i)
+    nodes[i]->assignColor(0);
+}
+
+/************************PUBLIC METHODS*******************************/
+
+Painter::Painter() {
+  //Ctor
+}
+
+Coloring Painter::paint(unsigned int numberOfIterations,
+                        unsigned int colorBound, nodeVec& nodes) {
+  return startup(numberOfIterations, colorBound, nodes);
 }
 
 Coloring Painter::getLastColoring() {
