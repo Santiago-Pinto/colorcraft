@@ -16,7 +16,8 @@ System::System() {
   dataHandler.execute("SELECT * FROM profesor;", pRecords);
   dataHandler.execute("SELECT * FROM asignaciones;", aRecords);
   dataHandler.execute("SELECT * FROM materias;", sRecords);
-  dataHandler.execute("SELECT DISTINCT curso FROM asignaciones", cRecords);
+  string query = "SELECT DISTINCT curso FROM asignaciones ORDER BY curso ASC";
+  dataHandler.execute(query, cRecords);
 
   this->subjectRecords = parser::parseSubjects(sRecords);
   this->professorRecords = parser::parseProfessors(pRecords);
