@@ -33,9 +33,17 @@ unsigned short Node::getGrade() {
   return this->adjacents.size();
 }
 
+string Node::getCourse() {
+  size_t begin = 0;
+
+  begin = this->label.find("-", 0);
+  return this->label.substr(0, begin);
+}
 
 string Node::getLabel(){
-  return this->label;
+  string label = this->label + ", Color: "  + to_string(this->getColor());
+  label += ",Cumple restricciones:" + to_string(this->meetsAllRestrictions());
+  return label;
 }
 
 void Node::addPenalty(short color){

@@ -64,23 +64,12 @@ vector<string> Coloring::getAsStringList() {
 }
 
 Coloring Coloring::getCourseColoring(string course) {
-  vector<string> list = this->getAsStringList();
   vector<string> courseNodes;
 
-  for (unsigned int i = 0; i < list.size(); i+=4) {
-    string group = list[i];
-    string subject = list[i+1] ;
-    string professor = list[i+2];
-    string color = list[i+3];
-    if (group == course) {
-      string element = group + "-" + subject + "-" + professor +"()";
-      element += ", Color: ";
-      element += color;
-      element += ",Cumple restricciones:0";
-      courseNodes.push_back(element);
-    }
-  }
-
+   for (Node node: this->nodes) {
+     if (node.getCourse() == course)
+      courseNodes.push_back(node.getLabel());
+   }
   return Coloring(courseNodes);
 }
 

@@ -28,6 +28,7 @@ class Node {
     unsigned short getGrade();
     std::string getLabel();
     unsigned int getProfId();
+    std::string getCourse();
 
     //Sets the color passed by argument as one the node can, but
     //should not take

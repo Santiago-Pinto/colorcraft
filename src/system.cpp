@@ -38,7 +38,7 @@ void System::colorGraph(unsigned int colorBound) {
   if (coloring.getNumberOfColorsUsed() > colorBound)
     cout<< "Se supero la cantidad de colores asignados" << endl;
   else {
-    coloring.print();
+    //coloring.print();
     this->lastColoring = coloring;
   }
 }
