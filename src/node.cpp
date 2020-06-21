@@ -16,6 +16,7 @@ void Node::addNeighbor(Node& other) {
   this->adjacents.push_back(&other);
 }
 
+
 int Node::assignColor(short color) {
   this->color = color;
   if (!this->meetsAllRestrictions()) {

@@ -34,8 +34,6 @@ Coloring Painter::startup(unsigned int numberOfIterations,
     if ((!minimumFunctional || functional < minimumFunctional) &&
         (usedColors.size() <= colorBound)) {
       bestColoring.clear();
-      bestColoring.setNumberOfColorsUsed(usedColors.size());
-      bestColoring.setFunctional(functional);
       for (unsigned int k = 0; k < this->nodes.size(); ++k)
         bestColoring.addPaintedNode(this->nodes[k]);
     }
@@ -78,6 +76,7 @@ Coloring Painter::paint(unsigned int numberOfIterations,
                         unsigned int colorBound, nodeVec& nodes) {
   return startup(numberOfIterations, colorBound, nodes);
 }
+
 
 Coloring Painter::getLastColoring() {
    //Doesn't check if it's set so far

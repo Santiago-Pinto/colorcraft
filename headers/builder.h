@@ -31,5 +31,9 @@ class Builder {
     std::vector<Node*> build(std::vector<Professor>& professors,
                              std::vector<Assignment>& assignments,
                              std::vector<Subject>& subjects);
+
+    std::vector<Node> rBuild(std::vector<Professor>& professors,
+                              std::vector<Assignment>& assignments,
+                              std::vector<Subject>& subjects); //*
 };
 #endif // BUILDER_H_INCLUDED

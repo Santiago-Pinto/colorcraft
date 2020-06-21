@@ -80,12 +80,12 @@ void Builder::buildNodes() {
         label += assignment.getGroup() + "-";
         label += subject.getName()+ "-";
         label += professor.getName()+ "(" + to_string(professor.getId()) + ")";
-        for (unsigned int i = 0; i<subject.getLoad(); ++i)
+        for (unsigned int i = 0; i<subject.getLoad(); ++i) {
           this->nodes.push_back(new Node(label, professor.getId()));
+        }
         label = "";
       }
     }
-
   }
 }
 
@@ -107,8 +107,9 @@ void Builder::addPenalties() {
       if (this->nodes[i]->getProfId() == professor.getId()) {
         string availability = professor.getAvailability();
         for (unsigned int j = 0; j < availability.size(); ++j) {
-          if (!(availability[j] - '0'))
+          if (!(availability[j] - '0')) {
             this->nodes[i]->addPenalty(j+1);
+          }
         }
       }
     }

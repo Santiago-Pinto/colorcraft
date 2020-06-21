@@ -6,16 +6,14 @@
 
 class Coloring {
   private:
-    std::vector<std::string> nodes;
-    short numberOfColorsUsed;
-    unsigned int functional;
+    std::vector<std::string> strNodes;
+    std::vector<Node> nodes; //*
 
   public:
     Coloring();
     Coloring(std::vector<std::string>& nodes);
-    void setNumberOfColorsUsed(short number);
+    Coloring(std::vector<Node>& nodes); //*
     short getNumberOfColorsUsed();
-    void setFunctional(unsigned int functional);
     unsigned int getFunctional();
     void addPaintedNode(Node* node);
     void clear();

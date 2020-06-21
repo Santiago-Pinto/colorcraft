@@ -18,6 +18,7 @@ class Painter {
     //node if everything goes fine.
     short chooseColor(Node* node);
     void resetColors();
+
     //Makes an initial coloring using a greedy heuristic
     Coloring startup(unsigned int numberOfIterations,
                             unsigned int colorBound, nodeVec& nodes);
