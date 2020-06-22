@@ -2,7 +2,6 @@
 #define PAINTER_H_INCLUDED
 #include <string>
 #include <vector>
-#include <map>
 #include "coloring.h"
 #include "node.h"
 
@@ -22,6 +21,10 @@ class Painter {
     //Makes an initial coloring using a greedy heuristic
     Coloring startup(unsigned int numberOfIterations,
                             unsigned int colorBound, nodeVec& nodes);
+    //Attempts to improve de functional by swapping colors from certain nodes
+    Coloring colorSwap(Coloring& coloring);
+    //Returns the next color viable in a progression between (0, top)
+    void reorder(std::vector<short>& colors);
 
   public:
     Painter();

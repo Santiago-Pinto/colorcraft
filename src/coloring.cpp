@@ -73,6 +73,11 @@ Coloring Coloring::getCourseColoring(string course) {
   return Coloring(courseNodes);
 }
 
+vector<Node> Coloring::getNodes() {
+  return this->nodes;
+}
+
+
 
 
 void Coloring::print() {
