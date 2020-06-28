@@ -3,7 +3,10 @@
 #include <ctime>        // std::time
 #include <cstdlib>      // std::rand, std::srand
 #include <map>
-#define SWAP_LIMIT 20000
+#define SWAP_LIMIT 5000
+#define NUMBER_OF_COLORINGS 4
+#include <iostream>
+using namespace std;
 using std::set;
 using std::vector;
 using std::next_permutation;
@@ -14,44 +17,40 @@ using std::map;
 using std::pair;
 
 Coloring Painter::startup(unsigned int numberOfIterations,
-                          unsigned int colorBound, nodeVec& nodes) {
+                          unsigned int colorBound, nodeVec nodes) {
   set<short> usedColors;
   unsigned int functional = 0;
   Coloring bestColoring;
-  this->nodes = nodes;
 
   for (unsigned int j = 0; j < numberOfIterations; ++j){
     srand(time(0));
-    random_shuffle(this->nodes.begin(), this->nodes.end());
+    random_shuffle(nodes.begin(), nodes.end());
     usedColors.clear();
     functional = 0;
     short currentColor;
-    for (unsigned int i = 0; i < this->nodes.size(); ++i) {
-      Node* current = this->nodes[i];
+    for (unsigned int i = 0; i < nodes.size(); ++i) {
+      Node* current = nodes[i];
       currentColor = this->chooseColor(current);
       usedColors.insert(currentColor);
       functional += current->assignColor(currentColor);
     }
-    functional += usedColors.size();
     unsigned int minimumFunctional = bestColoring.getFunctional();
+    functional += usedColors.size();
+
     if ((!minimumFunctional || functional < minimumFunctional) &&
         (usedColors.size() <= colorBound)) {
       bestColoring.clear();
-      for (unsigned int k = 0; k < this->nodes.size(); ++k)
-        bestColoring.addPaintedNode(this->nodes[k]);
+      for (unsigned int k = 0; k < nodes.size(); ++k)
+        bestColoring.addPaintedNode(nodes[k]);
     }
-    this->resetColors();
+    this->resetColors(nodes);
   }
-  this->lastColoring = bestColoring;
   return bestColoring;
 }
 
-#include <iostream>
-using namespace std;
-void Painter::reorder(vector<short>& colors) {
 
-  srand(time(0));
-  random_shuffle(colors.begin(), colors.end());
+void Painter::reorder(vector<short>& colors) {
+  next_permutation(colors.begin(), colors.end());
 }
 
 
@@ -99,9 +98,18 @@ short Painter::chooseColor(Node* node) {
   return currentColor;
 }
 
-void Painter::resetColors() {
-  for (unsigned int i = 0; i < this->nodes.size(); ++i)
+void Painter::resetColors(nodeVec& nodes) {
+  for (unsigned int i = 0; i < nodes.size(); ++i)
     nodes[i]->assignColor(0);
+}
+
+Coloring Painter::getMinimum(std::vector<Coloring>& colorings) {
+  Coloring bestColoring = colorings.front();
+  for (int i = 1; i < colorings.size(); ++i) {
+    if (colorings[i].getFunctional() < bestColoring.getFunctional())
+      bestColoring = colorings[i];
+  }
+  return bestColoring;
 }
 
 /************************PUBLIC METHODS*******************************/
@@ -110,21 +118,15 @@ Painter::Painter() {
   //Ctor
 }
 
+
 Coloring Painter::paint(unsigned int numberOfIterations,
                         unsigned int colorBound, nodeVec& nodes) {
-  Coloring greedyColoring = startup(numberOfIterations, colorBound, nodes);
-  return colorSwap(greedyColoring);
-}
 
 
-Coloring Painter::getLastColoring() {
-   //Doesn't check if it's set so far
-   return this->lastColoring;
-}
-
-/**Metodos para debuggear**/
-
-void Painter::printResult() {
-  for (unsigned int i = 0; i < this->nodes.size(); ++i)
-    nodes[i]->printInfo();
+  vector<Coloring> colorings;
+  for (int i = 0; i<NUMBER_OF_COLORINGS; ++i) {
+    colorings.push_back(startup(numberOfIterations, colorBound, nodes));
+    colorings[i]= colorSwap(colorings[i]);
+  }
+  return getMinimum(colorings);
 }

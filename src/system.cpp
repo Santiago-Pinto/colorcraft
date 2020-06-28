@@ -1,7 +1,7 @@
 #include "system.h"
 #include "node.h"
 #define DB_NAME "ColorcraftDB.db"
-#define ITERATION_LIMIT 10000
+#define ITERATION_LIMIT 5000
 using std::vector;
 using std::string;
 using std::cout;
@@ -35,8 +35,10 @@ void System::colorGraph(unsigned int colorBound) {
                                             subjectRecords);
 
   Coloring coloring = painter.paint(ITERATION_LIMIT, colorBound, nodes);
-  if (coloring.getNumberOfColorsUsed() > colorBound)
+  if (coloring.getNumberOfColorsUsed() > colorBound) {
     cout<< "Se supero la cantidad de colores asignados" << endl;
+    cout<<coloring.getNumberOfColorsUsed()<<endl;
+  }
   else {
     coloring.print();
     this->lastColoring = coloring;
