@@ -45,6 +45,10 @@ class UIHandler {
     void deleteProfessor(QString& id);
     void displayAvailability(Grid*& grid, QString& id);
 
+    void updateProfessor(QString& id,
+                         QString& name,
+                         std::string& availability);
+
     //Assignments methods
     void newAssignment(QComboBox*& cmbCourse, QComboBox*& cmbProfessor);
     void displayAssignments(Grid*& grid);

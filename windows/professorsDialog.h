@@ -5,6 +5,7 @@
 #include "uiHandler.h"
 #include "availabilityCheckView.h"
 #include "newProfessordialog.h"
+#include "professorChangeDialog.h"
 
 namespace Ui {
 class ProfessorsDialog;
@@ -28,6 +29,7 @@ private:
     UIHandler& uiHandler;
     AvailabilityCheckView* availabilityCheckView;
     newProfessorDialog* creationDialog;
+    ProfessorChangeDialog* updateDialog;
     Ui::ProfessorsDialog *ui;
 };
 

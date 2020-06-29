@@ -46,6 +46,10 @@ class System {
                                         std::string availability);
     void deleteProfessor(std::string& profId);
 
+    void updateProfessor(std::string& id,
+                         std::string& name,
+                         std::string& availability);
+
 
     //Assignments methods
     std::vector<std::string> getAssignments();

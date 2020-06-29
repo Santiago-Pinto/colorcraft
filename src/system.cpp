@@ -141,6 +141,17 @@ void System::deleteProfessor(std::string& profId) {
   refreshProfessors();
 }
 
+void System::updateProfessor(string& id, string& name, string& availability) {
+  dataHandler.execute("UPDATE profesor "
+                      "SET nombre='" + name + "', disponibilidad='"+availability
+                    +"' WHERE legajo='" + id + "'");
+  vector<string> pRecords;
+  this->professorRecords.clear();
+  dataHandler.execute("SELECT * FROM profesor;", pRecords);
+  this->professorRecords = parser::parseProfessors(pRecords);
+}
+
+
 void System::refreshProfessors() {
   vector<string> pRecords;
   dataHandler.execute("SELECT * FROM profesor;", pRecords);

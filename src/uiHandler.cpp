@@ -123,6 +123,14 @@ void UIHandler::displayAvailability(Grid*& grid, QString& id) {
   }
 }
 
+void UIHandler::updateProfessor(QString& id,
+                                QString& name, std::string& availability) {
+  string stdName = convertToStdString(name);
+  string profId = convertToStdString(id);
+  system.updateProfessor(profId, stdName, availability);
+}
+
+
 //                 Assignments methods
 
 void UIHandler::newAssignment(QComboBox*& cmbCourse, QComboBox*& cmbProfessor) {

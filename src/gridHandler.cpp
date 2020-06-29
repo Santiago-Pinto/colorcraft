@@ -77,7 +77,6 @@ void GridHandler::display(Grid*& grid, int row, int col, std::string item) {
 }
 
 void GridHandler::display(Grid*& grid, int row, int col, QString& item) {
-  setResizeMode(grid);
   grid->setItem(row, col, new QTableWidgetItem(item));
 }
 
@@ -85,6 +84,7 @@ void GridHandler::display(Grid*& grid, int row, int col, QString& item) {
 void GridHandler::setTitles(Grid*& grid, QStringList& titles) {
   grid->setColumnCount(titles.size());
   grid->setHorizontalHeaderLabels(titles);
+  this->setResizeMode(grid);
 }
 
 void GridHandler::paintCell(Grid*& grid, int row, int col, const QBrush& color){

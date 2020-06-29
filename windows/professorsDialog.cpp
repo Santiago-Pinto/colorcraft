@@ -39,7 +39,13 @@ void ProfessorsDialog::on_btnConsult_clicked() {
 }
 
 void ProfessorsDialog::on_btnModify_clicked() {
-
+  QModelIndex index = ui->grdProfessors->selectionModel()->currentIndex();
+  QVariant qvId = index.sibling(index.row(), 0).data();
+  QString id = qvId.toString();
+  QVariant qvName = index.sibling(index.row(), 1).data();
+  QString name = qvName.toString();
+  updateDialog = new ProfessorChangeDialog(this->uiHandler, id, name, this);
+  updateDialog->show();
 }
 
 void ProfessorsDialog::on_btnRemove_clicked() {

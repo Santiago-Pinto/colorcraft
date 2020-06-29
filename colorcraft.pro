@@ -48,7 +48,8 @@ HEADERS += ui_assignmentsDialog.h \
            windows/subjectChangeDialog.h \
            windows/subjectinputdialog.h \
            windows/subjectsdialog.h \
-    windows/newProfessordialog.h
+           windows/newProfessordialog.h \
+           windows/professorChangeDialog.h
 FORMS += assignmentsDialog.ui \
          availabilitycheckview.ui \
          coloringdialog.ui \
@@ -58,7 +59,8 @@ FORMS += assignmentsDialog.ui \
          subjectchangedialog.ui \
          subjectinputdialog.ui \
          subjectsdialog.ui \
-         newProfessordialog.ui
+         newProfessordialog.ui \
+         professorChangeDialog.ui
 SOURCES += main.cpp \
            src/assignment.cpp \
            src/builder.cpp \
@@ -82,7 +84,8 @@ SOURCES += main.cpp \
            windows/subjectChangeDialog.cpp \
            windows/subjectinputdialog.cpp \
            windows/subjectsdialog.cpp \
-    windows/newProfessordialog.cpp
+           windows/newProfessordialog.cpp \
+           windows/professorChangeDialog.cpp
 
            QT += sql
            QT += widgets
