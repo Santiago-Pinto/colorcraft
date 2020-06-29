@@ -34,6 +34,7 @@ void ColoringDialog::on_colorBtn_clicked() {
    uiHandler.displayColoring(ui->scheduleGrd, ui->coursesCmbBox);
    ui->coursesCmbBox->setEnabled(true);
    ui->colorBtn->setEnabled(true);
+   ui->coursesCmbBox->setCurrentIndex(1);
 }
 
 
