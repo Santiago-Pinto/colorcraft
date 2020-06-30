@@ -29,9 +29,13 @@ void GridHandler::setResizeMode(Grid*& grid) {
 
 /***************************PUBLIC******************************/
 //Subject, Professor, Color
+#include <iostream>
+using namespace std;
 void GridHandler::display(Grid*& grid, Coloring& coloring) {
   this->clear(grid);
   vector<string> list = coloring.getAsStringList();
+  vector<Node> nodes = coloring.getNodes();
+
   for (unsigned int i = 0; i < NUMBER_OF_CLASSES ; ++i)
     grid->insertRow(grid->rowCount());
 
@@ -43,6 +47,15 @@ void GridHandler::display(Grid*& grid, Coloring& coloring) {
     unsigned int row = color % NUMBER_OF_CLASSES;
     unsigned int column =  color / NUMBER_OF_CLASSES;
     grid->setItem(row, column, new QTableWidgetItem(text));
+  }
+  
+  for (unsigned int i = 0; i < nodes.size(); ++i) {
+    if(!nodes[i].meetsAllRestrictions()) {
+      short color = nodes[i].getColor()-1;
+      unsigned int row = color % NUMBER_OF_CLASSES;
+      unsigned int col =  color / NUMBER_OF_CLASSES;
+      this->paintCell(grid, row, col, Qt::yellow);
+    }
   }
 }
 

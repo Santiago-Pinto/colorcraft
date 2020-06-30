@@ -29,7 +29,7 @@ class System {
     System();
     ~System();
     void colorGraph(unsigned int colorBound);
-    Coloring getCourseColoring(std::string& course);
+    Coloring getColoring();
     std::vector<Subject> getSubjectsList();
     std::vector<Professor> getProfessorsList();
     std::vector<std::string> getCourses();

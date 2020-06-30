@@ -27,8 +27,8 @@ void UIHandler::setGridTitles(Grid*& grid, QStringList& titles) {
 
 void UIHandler::displayColoring(Grid*& grid, QComboBox*& cmbBox) {
   string course = this->cmbHandler.getValue(cmbBox);
-  Coloring coloring = this->system.getCourseColoring(course);
-  this->gridHandler.display(grid, coloring);
+  Coloring courseColoring = system.getColoring().getCourseColoring(course);
+  this->gridHandler.display(grid, courseColoring);
 }
 
 

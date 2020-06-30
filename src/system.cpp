@@ -45,9 +45,8 @@ void System::colorGraph(unsigned int colorBound) {
   }
 }
 
-Coloring System::getCourseColoring(string& course) {
-  Coloring courseColoring = this->lastColoring.getCourseColoring(course);
-  return courseColoring;
+Coloring System::getColoring() {
+  return this->lastColoring;
 }
 
 vector<Subject> System::getSubjectsList() {

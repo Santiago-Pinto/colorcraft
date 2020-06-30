@@ -14,6 +14,8 @@ Coloring::Coloring(){
 
 Coloring::Coloring(vector<Node>& nodes): nodes(nodes) {
   //Ctor
+  for (Node node: nodes)
+    this->strNodes.push_back(node.getLabel());
 }
 
 Coloring::Coloring(vector<string>& nodes): strNodes(nodes) {
@@ -64,20 +66,19 @@ vector<string> Coloring::getAsStringList() {
 }
 
 Coloring Coloring::getCourseColoring(string course) {
-  vector<string> courseNodes;
+  vector<Node> courseNodes;
 
    for (Node node: this->nodes) {
      if (node.getCourse() == course)
-      courseNodes.push_back(node.getLabel());
+      courseNodes.push_back(node);
    }
   return Coloring(courseNodes);
 }
 
+
 vector<Node> Coloring::getNodes() {
   return this->nodes;
 }
-
-
 
 
 void Coloring::print() {
