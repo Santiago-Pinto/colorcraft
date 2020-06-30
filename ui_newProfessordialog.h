@@ -76,7 +76,7 @@ public:
 "      background-color: rgb(11, 117, 250);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"
@@ -90,7 +90,7 @@ public:
 "      background-color: rgb(3, 7, 128);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"
@@ -107,7 +107,7 @@ public:
 "      background-color: rgb(250, 78, 78);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"
@@ -121,7 +121,7 @@ public:
 "      background-color: rgb(204, 0, 0);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"
@@ -136,7 +136,7 @@ public:
 
         layoutWidget1 = new QWidget(newProfessorDialog);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(20, 20, 324, 31));
+        layoutWidget1->setGeometry(QRect(20, 20, 324, 72));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

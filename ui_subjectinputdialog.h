@@ -42,7 +42,7 @@ public:
     {
         if (SubjectInputDialog->objectName().isEmpty())
             SubjectInputDialog->setObjectName(QStringLiteral("SubjectInputDialog"));
-        SubjectInputDialog->resize(248, 129);
+        SubjectInputDialog->resize(248, 124);
         txtAccept = new QPushButton(SubjectInputDialog);
         txtAccept->setObjectName(QStringLiteral("txtAccept"));
         txtAccept->setGeometry(QRect(10, 200, 379, 25));
@@ -53,7 +53,7 @@ public:
 "      background-color: rgb(11, 117, 250);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"
@@ -67,7 +67,7 @@ public:
 "      background-color: rgb(3, 7, 128);\n"
 "	  border-style: outset;\n"
 "	  border-width: 2px;\n"
-"	  border-radius: 10px;\n"
+"	  border-radius: 15px;\n"
 "	  border-color: beige;\n"
 "	  font: bold 14px;\n"
 "	  color: white;\n"

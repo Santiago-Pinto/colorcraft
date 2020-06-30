@@ -47,7 +47,7 @@
       background-color: rgb(11, 117, 250);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
@@ -61,7 +61,7 @@ QPushButton:hover:!pressed
       background-color: rgb(3, 7, 128);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
@@ -82,7 +82,7 @@ QPushButton:hover:!pressed
       background-color: rgb(11, 117, 250);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
@@ -96,7 +96,7 @@ QPushButton:hover:!pressed
       background-color: rgb(3, 7, 128);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
@@ -117,7 +117,7 @@ QPushButton:hover:!pressed
       background-color: rgb(250, 78, 78);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
@@ -131,7 +131,7 @@ QPushButton:hover:!pressed
       background-color: rgb(204, 0, 0);
 	  border-style: outset;
 	  border-width: 2px;
-	  border-radius: 10px;
+	  border-radius: 15px;
 	  border-color: beige;
 	  font: bold 14px;
 	  color: white;
