@@ -55,6 +55,9 @@ QPushButton:hover:!pressed
 	  color: white;
 	  min-width: 10em;
 	  padding: 6px;
+}
+QPushButton:disabled {
+background-color:rgb(136, 138, 133);
 }</string>
     </property>
     <property name="text">

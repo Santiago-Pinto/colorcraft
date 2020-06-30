@@ -69,6 +69,9 @@ public:
 "	  color: white;\n"
 "	  min-width: 10em;\n"
 "	  padding: 6px;\n"
+"}\n"
+"QPushButton:disabled {\n"
+"background-color:rgb(136, 138, 133);\n"
 "}"));
         exitBtn = new QPushButton(centralWidget);
         exitBtn->setObjectName(QStringLiteral("exitBtn"));
