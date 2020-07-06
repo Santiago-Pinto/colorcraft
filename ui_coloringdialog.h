@@ -18,9 +18,9 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,8 +32,8 @@ public:
     QTableWidget *scheduleGrd;
     QComboBox *coursesCmbBox;
     QLabel *lblLoad;
-    QTextEdit *textEdit;
     QLabel *lblProcessing;
+    QPlainTextEdit *textEdit;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QPushButton *colorBtn;
@@ -58,17 +58,17 @@ public:
         coursesCmbBox = new QComboBox(centralWidget);
         coursesCmbBox->setObjectName(QStringLiteral("coursesCmbBox"));
         coursesCmbBox->setEnabled(false);
-        coursesCmbBox->setGeometry(QRect(380, 260, 111, 25));
+        coursesCmbBox->setGeometry(QRect(350, 250, 111, 25));
         lblLoad = new QLabel(centralWidget);
         lblLoad->setObjectName(QStringLiteral("lblLoad"));
-        lblLoad->setGeometry(QRect(30, 260, 191, 20));
+        lblLoad->setGeometry(QRect(30, 249, 191, 31));
         lblLoad->setStyleSheet(QStringLiteral("font: bold 14px;"));
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(220, 260, 51, 21));
         lblProcessing = new QLabel(centralWidget);
         lblProcessing->setObjectName(QStringLiteral("lblProcessing"));
         lblProcessing->setGeometry(QRect(220, 290, 91, 51));
+        textEdit = new QPlainTextEdit(centralWidget);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(220, 250, 31, 31));
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(90, 340, 381, 34));
@@ -151,12 +151,6 @@ public:
          << QApplication::translate("ColoringDialog", "Cursos", Q_NULLPTR)
         );
         lblLoad->setText(QApplication::translate("ColoringDialog", "Carga horaria semanal:", Q_NULLPTR));
-        textEdit->setHtml(QApplication::translate("ColoringDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> </p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", Q_NULLPTR));
         lblProcessing->setText(QString());
         colorBtn->setText(QApplication::translate("ColoringDialog", "Colorear", Q_NULLPTR));
         exitBtn->setText(QApplication::translate("ColoringDialog", "Salir", Q_NULLPTR));
