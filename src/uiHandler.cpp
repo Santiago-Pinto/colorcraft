@@ -1,13 +1,24 @@
+#include <thread>
 #include "uiHandler.h"
 #include "parser.h"
 #define WEEK_DAYS 5
 #define NUMBER_OF_CLASSES 3
+#define ANIMATION "processing.gif"
 using std::vector;
 using std::string;
 using std::to_string;
 
 string UIHandler::convertToStdString(QString& qString) {
   return qString.toUtf8().constData();
+}
+
+void UIHandler::showProcessingAnimation(QLabel* label) {
+    QString path =  QString::fromStdString(ANIMATION);
+    animationHandler.play(label, path);
+}
+
+void UIHandler::stopProcessingAnimation(QLabel* label) {
+    animationHandler.stop(label);
 }
 
 /**********************PUBLIC METHODS*************************************/
@@ -38,8 +49,16 @@ void UIHandler::displaySubjects(Grid*& grid) {
     this->gridHandler.display(grid, subject);
 }
 
-void UIHandler::getColoring(unsigned int colorBound) {
-  this->system.colorGraph(colorBound);
+void UIHandler::getColoring(unsigned int colorBound, QLabel* label) {
+
+  bool done = false;
+  showProcessingAnimation(label);
+
+  std::thread coloringThread(&System::colorGraph, &system, colorBound, &done);
+  while(!done)
+    qApp->processEvents();
+  coloringThread.join();
+  stopProcessingAnimation(label);
 }
 
 string UIHandler::getComboBoxValue(QComboBox*& cmbBox) {

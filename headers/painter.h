@@ -19,9 +19,10 @@ class Painter {
     //Makes an initial coloring using a greedy heuristic
     Coloring startup(unsigned int numberOfIterations,
                             unsigned int colorBound, nodeVec nodes);
-    //Attempts to improve de functional by swapping colors from certain nodes
+    //Attempts to improve the functional by swapping colors of all the nodes
     //Returns the next color viable in a progression between (0, top)
     Coloring colorSwap(Coloring& coloring);
+
     void reorder(std::vector<short>& colors);
 
     //From a set of colorings, it returns the one with the lowest functional

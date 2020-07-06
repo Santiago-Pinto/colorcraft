@@ -28,7 +28,7 @@ class System {
   public:
     System();
     ~System();
-    void colorGraph(unsigned int colorBound);
+    void colorGraph(unsigned int colorBound, bool* done);
     Coloring getColoring();
     std::vector<Subject> getSubjectsList();
     std::vector<Professor> getProfessorsList();

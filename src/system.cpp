@@ -9,7 +9,6 @@ using std::endl;
 using std::set;
 using std::to_string;
 
-
 System::System() {
   vector<string> pRecords, aRecords, sRecords, cRecords;
   dataHandler.connect(DB_NAME);
@@ -29,7 +28,7 @@ System::~System() {
   //Dtor
 }
 
-void System::colorGraph(unsigned int colorBound) {
+void System::colorGraph(unsigned int colorBound, bool* done) {
   vector<Node*> nodes = this->builder.build(professorRecords,
                                             assignmentRecords,
                                             subjectRecords);
@@ -43,6 +42,7 @@ void System::colorGraph(unsigned int colorBound) {
     coloring.print();
     this->lastColoring = coloring;
   }
+  *done = true;
 }
 
 Coloring System::getColoring() {

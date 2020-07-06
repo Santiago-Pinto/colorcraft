@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "uiHandler.h"
 
+
 namespace Ui {
 class ColoringDialog;
 }

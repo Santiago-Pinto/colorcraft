@@ -24,13 +24,12 @@ ColoringDialog::~ColoringDialog()
     delete ui;
 }
 
-
 void ColoringDialog::on_colorBtn_clicked() {
    ui->colorBtn->setEnabled(false);
    QApplication::processEvents();
    QString textEditText = ui->textEdit->toPlainText();
    string  numberOfTerms = textEditText.toUtf8().constData();
-   uiHandler.getColoring(atoi(numberOfTerms.c_str()));
+   uiHandler.getColoring(atoi(numberOfTerms.c_str()), ui->lblProcessing);
    uiHandler.displayColoring(ui->scheduleGrd, ui->coursesCmbBox);
    ui->coursesCmbBox->setEnabled(true);
    ui->colorBtn->setEnabled(true);

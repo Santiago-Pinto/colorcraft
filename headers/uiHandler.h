@@ -1,5 +1,6 @@
 #ifndef UIHANDLER_H_INCLUDED
 #define UIHANDLER_H_INCLUDED
+#include "animationHandler.h"
 #include "gridHandler.h"
 #include "comboBoxHandler.h"
 #include "system.h"
@@ -10,8 +11,12 @@ class UIHandler {
   private:
     GridHandler gridHandler;
     CmbBoxHandler cmbHandler;
+    AnimationHandler animationHandler;
     System system;
     std::string convertToStdString(QString& qString);
+    void showProcessingAnimation(QLabel* label);
+    void stopProcessingAnimation(QLabel* label);
+
 
   public:
     UIHandler();
@@ -24,7 +29,7 @@ class UIHandler {
     void displayColoring(Grid*& grid, QComboBox*& cmbBox);
     void displaySubjects(Grid*& grid);
 
-    void getColoring(unsigned int colorBound);
+    void getColoring(unsigned int colorBound, QLabel* label);
     std::string getComboBoxValue(QComboBox*& cmbBox);
 
     //Combo box methods

@@ -4,6 +4,7 @@
 #include <cstdlib>      // std::rand, std::srand
 #include <map>
 #define SWAP_LIMIT 5000
+#define ITERATION_LIMIT 5000
 #define NUMBER_OF_COLORINGS 4
 #include <iostream>
 using namespace std;
@@ -15,6 +16,7 @@ using std::string;
 using std::to_string;
 using std::map;
 using std::pair;
+using std::sort;
 
 Coloring Painter::startup(unsigned int numberOfIterations,
                           unsigned int colorBound, nodeVec nodes) {
@@ -55,11 +57,12 @@ void Painter::reorder(vector<short>& colors) {
 
 
 Coloring Painter::colorSwap(Coloring& coloring) {
+
   Coloring bestColoring = coloring;
   int colorsUsed = coloring.getNumberOfColorsUsed();
   vector<short> colors;
-  for (int i = 0; i < colorsUsed; ++i) {
-    colors.push_back(i+1);
+  for (int i = 1; i <= colorsUsed; ++i) {
+    colors.push_back(i);
   }
 
   vector<Node> nodes = bestColoring.getNodes();
@@ -80,6 +83,7 @@ Coloring Painter::colorSwap(Coloring& coloring) {
   }
   return bestColoring;
 }
+
 
 short Painter::chooseColor(Node* node) {
   short currentColor = 1;
@@ -124,6 +128,7 @@ Coloring Painter::paint(unsigned int numberOfIterations,
 
 
   vector<Coloring> colorings;
+  int j = 0;
   for (int i = 0; i<NUMBER_OF_COLORINGS; ++i) {
     colorings.push_back(startup(numberOfIterations, colorBound, nodes));
     colorings[i]= colorSwap(colorings[i]);
