@@ -17,4 +17,5 @@ void AnimationHandler::play(QLabel* label, QString& path) {
 
 void AnimationHandler::stop(QLabel* label) {
   label->setVisible(false);
+  this->movie->stop();
 }
