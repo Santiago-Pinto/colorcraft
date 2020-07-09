@@ -31,10 +31,9 @@ Coloring Painter::startup(unsigned int numberOfIterations,
     functional = 0;
     short currentColor;
     for (unsigned int i = 0; i < nodes.size(); ++i) {
-      Node* current = nodes[i];
-      currentColor = this->chooseColor(current);
+      currentColor = this->chooseColor(nodes[i]);
       usedColors.insert(currentColor);
-      functional += current->assignColor(currentColor);
+      functional += nodes[i]->assignColor(currentColor);
     }
     unsigned int minimumFunctional = bestColoring.getFunctional();
     functional += usedColors.size();
@@ -47,6 +46,7 @@ Coloring Painter::startup(unsigned int numberOfIterations,
     }
     this->resetColors(nodes);
   }
+  bestColoring.printAdjInfo();
   return bestColoring;
 }
 

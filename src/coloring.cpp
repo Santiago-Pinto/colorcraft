@@ -88,3 +88,13 @@ void Coloring::print() {
   cout<< to_string(this->getNumberOfColorsUsed())<<endl;
   cout<< "Funcional: " + to_string(this->getFunctional()) <<endl;
 }
+
+
+/*******************For debugging purposes**********************************/
+void Coloring::printAdjInfo() {
+  vector<Node> adjacents = this->getNodes();
+  for (Node node: adjacents) {
+    for(Node* adj: node.getAdjacents())
+      cout<<"Color: "<< adj->getColor()<<endl;
+  }
+}

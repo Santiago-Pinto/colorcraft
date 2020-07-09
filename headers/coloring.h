@@ -22,6 +22,9 @@ class Coloring {
     //Returns a subcoloring containing only the items from a certain course
     Coloring getCourseColoring(std::string course);
     void print();
+
+    //For debugging purposes
+    void printAdjInfo();
 };
 
 
