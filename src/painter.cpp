@@ -46,7 +46,6 @@ Coloring Painter::startup(unsigned int numberOfIterations,
     }
     this->resetColors(nodes);
   }
-  bestColoring.printAdjInfo();
   return bestColoring;
 }
 
@@ -77,7 +76,8 @@ Coloring Painter::colorSwap(Coloring& coloring) {
       newColoring.addPaintedNode(&node);
     }
     if (newColoring.getFunctional() < bestColoring.getFunctional()) {
-      cout<< "Viejo funcional: " << bestColoring.getFunctional() << " Nuevo funcional: " << newColoring.getFunctional() <<endl;
+      cout<< "Viejo funcional: " << bestColoring.getFunctional();
+      cout << " Nuevo funcional: " << newColoring.getFunctional() <<endl;
       bestColoring = newColoring;
     }
   }
@@ -89,6 +89,7 @@ short Painter::chooseColor(Node* node) {
   short currentColor = 1;
   vector<Node*> adjacents = node->getAdjacents();
   unsigned int i = 0;
+
   while (i< adjacents.size()) {
     Node* neighbor = adjacents[i];
 

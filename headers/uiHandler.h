@@ -2,6 +2,7 @@
 #define UIHANDLER_H_INCLUDED
 #include "animationHandler.h"
 #include "gridHandler.h"
+#include "uiMessageHandler.h"
 #include "comboBoxHandler.h"
 #include "system.h"
 
@@ -12,6 +13,7 @@ class UIHandler {
     GridHandler gridHandler;
     CmbBoxHandler cmbHandler;
     AnimationHandler animationHandler;
+    UiMessageHandler uiMessageHandler;
     System system;
     std::string convertToStdString(QString& qString);
     void showProcessingAnimation(QLabel* label);
