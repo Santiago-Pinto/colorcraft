@@ -36,12 +36,10 @@ void UIHandler::setGridTitles(Grid*& grid, QStringList& titles) {
   this->gridHandler.setTitles(grid, titles);
 }
 
-#include <iostream>
-using namespace std;
+
 void UIHandler::displayColoring(Grid*& grid, QComboBox*& cmbBox) {
   string course = this->cmbHandler.getValue(cmbBox);
   Coloring courseColoring = system.getColoring().getCourseColoring(course);
-  cout<<"dafhajfhadjfgdalfgad;fa"<<endl;
   if (!courseColoring.getFunctional())
     uiMessageHandler.displayWarning("No se pudo encontrar un horario valido "
                                     "para el limite de bloques solicitado");
