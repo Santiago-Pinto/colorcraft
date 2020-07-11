@@ -136,7 +136,7 @@ public:
 
         layoutWidget1 = new QWidget(newProfessorDialog);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(20, 20, 324, 72));
+        layoutWidget1->setGeometry(QRect(20, 20, 324, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

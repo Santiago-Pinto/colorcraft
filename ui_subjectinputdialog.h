@@ -42,7 +42,7 @@ public:
     {
         if (SubjectInputDialog->objectName().isEmpty())
             SubjectInputDialog->setObjectName(QStringLiteral("SubjectInputDialog"));
-        SubjectInputDialog->resize(248, 124);
+        SubjectInputDialog->resize(248, 129);
         txtAccept = new QPushButton(SubjectInputDialog);
         txtAccept->setObjectName(QStringLiteral("txtAccept"));
         txtAccept->setGeometry(QRect(10, 200, 379, 25));

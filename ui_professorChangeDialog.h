@@ -28,13 +28,13 @@ QT_BEGIN_NAMESPACE
 class Ui_ProfessorChangeDialog
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *grdAvailability;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *btnUpdate;
     QPushButton *btnExit;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QLabel *lblName;
     QTextEdit *txtName;
@@ -44,13 +44,13 @@ public:
         if (ProfessorChangeDialog->objectName().isEmpty())
             ProfessorChangeDialog->setObjectName(QStringLiteral("ProfessorChangeDialog"));
         ProfessorChangeDialog->resize(393, 324);
-        widget = new QWidget(ProfessorChangeDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(0, 50, 391, 261));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(ProfessorChangeDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 50, 391, 261));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        grdAvailability = new QTableWidget(widget);
+        grdAvailability = new QTableWidget(layoutWidget);
         grdAvailability->setObjectName(QStringLiteral("grdAvailability"));
         grdAvailability->setStyleSheet(QLatin1String("QHeaderView::section {\n"
 "    background-color: rgb(11, 117, 250);\n"
@@ -62,7 +62,7 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        btnUpdate = new QPushButton(widget);
+        btnUpdate = new QPushButton(layoutWidget);
         btnUpdate->setObjectName(QStringLiteral("btnUpdate"));
         btnUpdate->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(11, 117, 250);\n"
@@ -93,7 +93,7 @@ public:
 
         horizontalLayout_2->addWidget(btnUpdate);
 
-        btnExit = new QPushButton(widget);
+        btnExit = new QPushButton(layoutWidget);
         btnExit->setObjectName(QStringLiteral("btnExit"));
         btnExit->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(250, 78, 78);\n"
@@ -126,13 +126,13 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        widget1 = new QWidget(ProfessorChangeDialog);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(3, 4, 324, 41));
-        horizontalLayout = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(ProfessorChangeDialog);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(3, 4, 324, 31));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        lblName = new QLabel(widget1);
+        lblName = new QLabel(layoutWidget1);
         lblName->setObjectName(QStringLiteral("lblName"));
         QFont font;
         font.setPointSize(12);
@@ -142,7 +142,7 @@ public:
 
         horizontalLayout->addWidget(lblName);
 
-        txtName = new QTextEdit(widget1);
+        txtName = new QTextEdit(layoutWidget1);
         txtName->setObjectName(QStringLiteral("txtName"));
         QFont font1;
         font1.setPointSize(12);
