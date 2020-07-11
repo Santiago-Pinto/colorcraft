@@ -12,6 +12,9 @@ string paste(vector<string>& records) {
 vector<Professor> parser::parseProfessors(vector<string>& pRecords) {
 
   vector<Professor> professors;
+  if (!pRecords.size())
+    return professors;
+
   vector<string> v;
   size_t begin = 0;
   size_t end = 0;
@@ -36,6 +39,9 @@ vector<Professor> parser::parseProfessors(vector<string>& pRecords) {
 vector<Assignment> parser::parseAssignments(vector<string>& aRecords) {
 
   vector<Assignment> assignments;
+  if (!aRecords.size())
+    return assignments;
+
   vector<string> v;
   size_t begin = 0;
   size_t end = 0;
@@ -59,6 +65,9 @@ vector<Assignment> parser::parseAssignments(vector<string>& aRecords) {
 
 vector<Subject> parser::parseSubjects(vector<string>& sRecords) {
   vector<Subject> subjects;
+  if (!sRecords.size())
+    return subjects;
+
   vector<string> v;
   size_t begin = 0;
   size_t end = 0;
@@ -83,6 +92,9 @@ vector<Subject> parser::parseSubjects(vector<string>& sRecords) {
 vector<string> parser::parseCourses(vector<string>& cRecords) {
 
   vector<string> courses;
+  if (!cRecords.size())
+    return courses;
+
   size_t begin = 0;
   size_t end = 0;
 
