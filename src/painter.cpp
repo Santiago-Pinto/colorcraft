@@ -25,6 +25,7 @@ Coloring Painter::startup(unsigned int numberOfIterations,
   Coloring bestColoring;
 
   for (unsigned int j = 0; j < numberOfIterations; ++j){
+    this->resetColors(nodes);
     srand(time(0));
     random_shuffle(nodes.begin(), nodes.end());
     usedColors.clear();
@@ -44,7 +45,6 @@ Coloring Painter::startup(unsigned int numberOfIterations,
       for (unsigned int k = 0; k < nodes.size(); ++k)
         bestColoring.addPaintedNode(nodes[k]);
     }
-    this->resetColors(nodes);
   }
   return bestColoring;
 }
@@ -92,7 +92,6 @@ short Painter::chooseColor(Node* node) {
 
   while (i< adjacents.size()) {
     Node* neighbor = adjacents[i];
-
     if (neighbor->getColor() ==  currentColor) {
       i = 0;
       ++currentColor;
