@@ -60,9 +60,9 @@
    <widget class="QLabel" name="lblLoad">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>249</y>
-      <width>191</width>
+      <x>10</x>
+      <y>250</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -70,7 +70,7 @@
      <string notr="true">font: bold 14px;</string>
     </property>
     <property name="text">
-     <string>Carga horaria semanal:</string>
+     <string>Cantidad de bloques diarios:</string>
     </property>
    </widget>
    <widget class="QLabel" name="lblProcessing">
@@ -89,14 +89,14 @@
    <widget class="QPlainTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>240</x>
       <y>250</y>
       <width>31</width>
       <height>31</height>
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>90</x>

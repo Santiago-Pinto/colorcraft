@@ -28,6 +28,7 @@ System::~System() {
   //Dtor
 }
 
+
 void System::colorGraph(unsigned int colorBound, bool* done) {
   vector<Node*> nodes = this->builder.build(professorRecords,
                                             assignmentRecords,

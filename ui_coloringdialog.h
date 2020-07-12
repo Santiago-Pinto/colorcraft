@@ -34,7 +34,7 @@ public:
     QLabel *lblLoad;
     QLabel *lblProcessing;
     QPlainTextEdit *textEdit;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *colorBtn;
     QPushButton *exitBtn;
@@ -61,21 +61,21 @@ public:
         coursesCmbBox->setGeometry(QRect(350, 250, 111, 25));
         lblLoad = new QLabel(centralWidget);
         lblLoad->setObjectName(QStringLiteral("lblLoad"));
-        lblLoad->setGeometry(QRect(30, 249, 191, 31));
+        lblLoad->setGeometry(QRect(10, 250, 241, 31));
         lblLoad->setStyleSheet(QStringLiteral("font: bold 14px;"));
         lblProcessing = new QLabel(centralWidget);
         lblProcessing->setObjectName(QStringLiteral("lblProcessing"));
         lblProcessing->setGeometry(QRect(220, 290, 91, 51));
         textEdit = new QPlainTextEdit(centralWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(220, 250, 31, 31));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(90, 340, 381, 34));
-        horizontalLayout = new QHBoxLayout(widget);
+        textEdit->setGeometry(QRect(240, 250, 31, 31));
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(90, 340, 381, 34));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        colorBtn = new QPushButton(widget);
+        colorBtn = new QPushButton(layoutWidget);
         colorBtn->setObjectName(QStringLiteral("colorBtn"));
         colorBtn->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(230, 19, 249);\n"
@@ -107,7 +107,7 @@ public:
 
         horizontalLayout->addWidget(colorBtn);
 
-        exitBtn = new QPushButton(widget);
+        exitBtn = new QPushButton(layoutWidget);
         exitBtn->setObjectName(QStringLiteral("exitBtn"));
         exitBtn->setStyleSheet(QLatin1String("QPushButton {\n"
 "      background-color: rgb(250, 78, 78);\n"
@@ -150,7 +150,7 @@ public:
         coursesCmbBox->insertItems(0, QStringList()
          << QApplication::translate("ColoringDialog", "Cursos", Q_NULLPTR)
         );
-        lblLoad->setText(QApplication::translate("ColoringDialog", "Carga horaria semanal:", Q_NULLPTR));
+        lblLoad->setText(QApplication::translate("ColoringDialog", "Cantidad de bloques diarios:", Q_NULLPTR));
         lblProcessing->setText(QString());
         colorBtn->setText(QApplication::translate("ColoringDialog", "Colorear", Q_NULLPTR));
         exitBtn->setText(QApplication::translate("ColoringDialog", "Salir", Q_NULLPTR));

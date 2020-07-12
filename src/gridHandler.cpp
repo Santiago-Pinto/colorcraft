@@ -2,7 +2,6 @@
 #include <vector>
 #include <QHeaderView>
 #define NUMBER_OF_DAYS 5
-#define NUMBER_OF_CLASSES 3
 using std::vector;
 using std::string;
 using std::to_string;
@@ -31,12 +30,13 @@ void GridHandler::setResizeMode(Grid*& grid) {
 //Subject, Professor, Color
 #include <iostream>
 using namespace std;
-void GridHandler::display(Grid*& grid, Coloring& coloring) {
+void GridHandler::display(Grid*& grid, Coloring& coloring,
+                                                      unsigned int dailyTerms) {
   this->clear(grid);
   vector<string> list = coloring.getAsStringList();
   vector<Node> nodes = coloring.getNodes();
 
-  for (unsigned int i = 0; i < NUMBER_OF_CLASSES ; ++i)
+  for (unsigned int i = 0; i < dailyTerms ; ++i)
     grid->insertRow(grid->rowCount());
 
 
@@ -44,16 +44,16 @@ void GridHandler::display(Grid*& grid, Coloring& coloring) {
   for (unsigned int i = 0; i < list.size(); i+=4) {
     short color = atoi(list[i+3].c_str()) - 1;
     QString text = QString::fromStdString(list[i+1] + "\n" + list[i+2]);
-    unsigned int row = color % NUMBER_OF_CLASSES;
-    unsigned int column =  color / NUMBER_OF_CLASSES;
+    unsigned int row = color % dailyTerms;
+    unsigned int column =  color / dailyTerms;
     grid->setItem(row, column, new QTableWidgetItem(text));
   }
-  
+
   for (unsigned int i = 0; i < nodes.size(); ++i) {
     if(!nodes[i].meetsAllRestrictions()) {
       short color = nodes[i].getColor()-1;
-      unsigned int row = color % NUMBER_OF_CLASSES;
-      unsigned int col =  color / NUMBER_OF_CLASSES;
+      unsigned int row = color % dailyTerms;
+      unsigned int col =  color / dailyTerms;
       this->paintCell(grid, row, col, Qt::yellow);
     }
   }
@@ -70,6 +70,7 @@ void GridHandler::display(Grid*& grid, Subject& subject) {
   display(grid, grid->rowCount() - 1, 1, name);
   display(grid, grid->rowCount() - 1, 2, load);
 }
+
 
 void GridHandler::display(Grid*& grid, Professor& professor) {
   string strId = to_string(professor.getId());

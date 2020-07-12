@@ -2,7 +2,6 @@
 #include "uiHandler.h"
 #include "parser.h"
 #define WEEK_DAYS 5
-#define NUMBER_OF_CLASSES 3
 #define ANIMATION "processing.gif"
 #define COLORING_FAILURE_MESSAGE
 using std::vector;
@@ -24,7 +23,7 @@ void UIHandler::stopProcessingAnimation(QLabel* label) {
 
 /**********************PUBLIC METHODS*************************************/
 UIHandler::UIHandler() {
-  //Ctor
+  this->numberOfClasses = 3;
 }
 
 UIHandler::~UIHandler() {
@@ -44,7 +43,7 @@ void UIHandler::displayColoring(Grid*& grid, QComboBox*& cmbBox) {
     uiMessageHandler.displayWarning("No se pudo encontrar un horario valido "
                                     "para el limite de bloques solicitado");
   else
-    gridHandler.display(grid, courseColoring);
+    gridHandler.display(grid, courseColoring, this->numberOfClasses);
 }
 
 
@@ -54,11 +53,13 @@ void UIHandler::displaySubjects(Grid*& grid) {
     this->gridHandler.display(grid, subject);
 }
 
-void UIHandler::getColoring(unsigned int colorBound, QLabel* label) {
 
+void UIHandler::getColoring(unsigned int dailyTerms, QLabel* label) {
+
+  this->numberOfClasses = dailyTerms;
   bool done = false;
   showProcessingAnimation(label);
-
+  unsigned int colorBound = dailyTerms*WEEK_DAYS;
   std::thread coloringThread(&System::colorGraph, &system, colorBound, &done);
   while(!done)
     qApp->processEvents();
@@ -125,7 +126,6 @@ void UIHandler::deleteProfessor(QString& id) {
   system.deleteProfessor(profId);
 }
 
-
 void UIHandler::displayAvailability(Grid*& grid, QString& id) {
   vector<Professor> professors = system.getProfessorsList();
   Professor target;
@@ -134,12 +134,11 @@ void UIHandler::displayAvailability(Grid*& grid, QString& id) {
       target = professor;
     }
   }
-
   string availability = target.getAvailability();
-  gridHandler.giveFormat(grid, availability.size()/WEEK_DAYS, WEEK_DAYS);
+  gridHandler.giveFormat(grid, this->numberOfClasses, WEEK_DAYS);
   for (unsigned int i = 0; i < availability.size(); ++i) {
-    int row = i % NUMBER_OF_CLASSES;
-    int col =  i / NUMBER_OF_CLASSES;
+    int row = i % this->numberOfClasses;
+    int col =  i / this->numberOfClasses;
     if (availability[i]- '0')
       gridHandler.paintCell(grid,row,col,Qt::green);
     else
@@ -190,11 +189,11 @@ void UIHandler::paintCell(Grid*& grid, int row, int col, const QBrush& color) {
 }
 
 void UIHandler::formatGrid(Grid*& grid) {
-  gridHandler.giveFormat(grid, NUMBER_OF_CLASSES, WEEK_DAYS);
+  gridHandler.giveFormat(grid, this->numberOfClasses, WEEK_DAYS);
 }
 
 void UIHandler::paintGrid(Grid*& grid, const QBrush& color) {
-  for (int row = 0; row < NUMBER_OF_CLASSES; ++row) {
+  for (int row = 0; row < this->numberOfClasses; ++row) {
     for (int col = 0; col < WEEK_DAYS; ++col)
       paintCell(grid, row, col, color);
   }

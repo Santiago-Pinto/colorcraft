@@ -10,6 +10,7 @@
    map database records**/
 class UIHandler {
   private:
+    unsigned int numberOfClasses;
     GridHandler gridHandler;
     CmbBoxHandler cmbHandler;
     AnimationHandler animationHandler;
@@ -31,7 +32,7 @@ class UIHandler {
     void displayColoring(Grid*& grid, QComboBox*& cmbBox);
     void displaySubjects(Grid*& grid);
 
-    void getColoring(unsigned int colorBound, QLabel* label);
+    void getColoring(unsigned int dailyTerms, QLabel* label);
     std::string getComboBoxValue(QComboBox*& cmbBox);
 
     //Combo box methods

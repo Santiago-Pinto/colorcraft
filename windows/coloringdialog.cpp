@@ -24,6 +24,7 @@ ColoringDialog::~ColoringDialog()
     delete ui;
 }
 
+
 void ColoringDialog::on_colorBtn_clicked() {
    ui->colorBtn->setEnabled(false);
    QApplication::processEvents();

@@ -47,7 +47,7 @@ void Coloring::addPaintedNode(Node* node) {
   element += to_string (node->getColor());
   element += ",Cumple restricciones:" + to_string(node->meetsAllRestrictions());
   this->strNodes.push_back(element);
-  this->nodes.push_back(*node); //*
+  this->nodes.push_back(*node);
 }
 
 void Coloring::clear() {
@@ -95,6 +95,7 @@ void Coloring::printAdjInfo() {
   vector<Node> adjacents = this->getNodes();
   for (Node node: adjacents) {
     for(Node* adj: node.getAdjacents())
-      cout<<"Color: "<< adj->getColor()<<endl;
+      cout<<adj->getLabel()<<endl;
   }
+  cout<<"------------------------------------"<<endl;
 }

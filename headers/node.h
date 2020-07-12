@@ -11,6 +11,7 @@ class Node {
     std::string label;
     std::set<short> penalties; //The colors that would be nice this node didn't take
     std::vector<Node*> adjacents; //labels of the adjacent nodes
+    std::vector<Node> adj; //*
     short color;
     unsigned int profId;
 
@@ -37,6 +38,7 @@ class Node {
     bool meetsAllRestrictions();
 
     std::vector<Node*>& getAdjacents();
+    std::vector<Node>& getAdj();//*
 
     /********* Metodos usados para debuggear, borrar despues ****************/
     void printInfo();

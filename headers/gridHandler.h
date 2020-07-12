@@ -17,7 +17,7 @@ class GridHandler {
     ~GridHandler();
 
     //Displays the specified course schedule on the grid
-    void display(Grid*& grid, Coloring& coloring);
+    void display(Grid*& grid, Coloring& coloring, unsigned int dailyTerms);
 
     //Displays the specified subject on the grid
     void display(Grid*& grid, Subject& subject);
