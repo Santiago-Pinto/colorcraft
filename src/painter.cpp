@@ -108,11 +108,11 @@ void Painter::refine(Coloring& coloring, int colorBound) {
 
       if ((adjColors.find(i) == adjColors.end()) && (node.getColor() != i)){
         coloring.replaceColor(&node, i);
-        cout<< "Viejo funcional:" << oldFunctional <<" Refinado: " << coloring.getFunctional() <<endl;
       }
     }
     adjColors.clear();
   }
+  cout<< "Viejo funcional:" << oldFunctional <<" Refinado: " << coloring.getFunctional() <<endl;
 }
 
 
