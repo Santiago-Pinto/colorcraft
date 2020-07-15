@@ -12,6 +12,9 @@ AvailabilityCheckView::AvailabilityCheckView(UIHandler& handler,
     palette.setBrush(QPalette::Background, pm);
     this->setPalette(palette);
     setWindowTitle("Disponibilidad horaria " + name);
+    QStringList titles;
+    titles << "Lunes" << "Martes" << "Miercoles"<< "Jueves"<< "Viernes";
+    uiHandler.setGridTitles(ui->grdAvailability, titles);
     ui->lblProfessor->setText("("+ id + ")" + " " + name);
     showAvailability();
 }

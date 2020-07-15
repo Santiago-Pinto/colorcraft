@@ -23,6 +23,7 @@ class System {
     std::vector<std::string> courseRecords;
     void refreshSubjects();
     void refreshProfessors();
+    void refreshAssignments();
 
 
   public:

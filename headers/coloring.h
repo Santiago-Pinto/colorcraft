@@ -16,6 +16,7 @@ class Coloring {
     short getNumberOfColorsUsed();
     unsigned int getFunctional();
     void addPaintedNode(Node* node);
+    void replaceColor(Node* node, short color);
     void clear();
     std::vector<Node> getNodes();
     std::vector<std::string> getAsStringList();

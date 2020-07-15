@@ -44,6 +44,7 @@ Coloring Painter::startup(unsigned int numberOfIterations,
       bestColoring.clear();
       for (unsigned int k = 0; k < nodes.size(); ++k)
         bestColoring.addPaintedNode(nodes[k]);
+      refine(bestColoring, colorBound);
     }
   }
   return bestColoring;
@@ -82,6 +83,36 @@ Coloring Painter::colorSwap(Coloring& coloring) {
     }
   }
   return bestColoring;
+}
+
+bool compareNodes(Node& first, Node& second) {
+  return (first.getGrade() > second.getGrade());
+}
+
+void Painter::refine(Coloring& coloring, int colorBound) {
+  unsigned int oldFunctional = coloring.getFunctional();
+  vector<Node> conflictNodes;
+  for (Node node: coloring.getNodes()){
+    if (!node.meetsAllRestrictions())
+      conflictNodes.push_back(node);
+  }
+
+  sort(conflictNodes.begin(), conflictNodes.end(), compareNodes);
+  for (Node node: conflictNodes){
+    set<short> adjColors;
+    for (Node* adj:node.getAdjacents()) {
+      adjColors.insert(adj->getColor());
+    }
+
+    for (int i = 1; i <= colorBound; ++i) {
+
+      if ((adjColors.find(i) == adjColors.end()) && (node.getColor() != i)){
+        coloring.replaceColor(&node, i);
+        cout<< "Viejo funcional:" << oldFunctional <<" Refinado: " << coloring.getFunctional() <<endl;
+      }
+    }
+    adjColors.clear();
+  }
 }
 
 

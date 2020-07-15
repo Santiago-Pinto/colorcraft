@@ -113,6 +113,8 @@ void System::deleteSubject(std::string& subjectName) {
     dataHandler.execute(query);
   }
   refreshSubjects();
+  refreshProfessors();
+  refreshAssignments();
 }
 
 
@@ -139,6 +141,7 @@ void System::deleteProfessor(std::string& profId) {
   dataHandler.execute("DELETE FROM profesor WHERE legajo='" + profId +"';");
   dataHandler.execute("DELETE FROM asignaciones WHERE profId='" +profId+ "';");
   refreshProfessors();
+  refreshAssignments();
 }
 
 void System::updateProfessor(string& id, string& name, string& availability) {
@@ -154,6 +157,7 @@ void System::updateProfessor(string& id, string& name, string& availability) {
 
 void System::refreshProfessors() {
   vector<string> pRecords;
+  this->professorRecords.clear();
   dataHandler.execute("SELECT * FROM profesor;", pRecords);
   this->professorRecords = parser::parseProfessors(pRecords);
 }
@@ -193,4 +197,11 @@ void System::deleteAssignment(string& strCourse,
                   "' AND materia='" + strSubject +
                   "' AND curso='" +strCourse + "');";
   dataHandler.execute(query);
+  refreshAssignments();
+}
+
+void System::refreshAssignments() {
+  vector<string> aRecords;
+  dataHandler.execute("SELECT * FROM asignaciones;", aRecords);
+  this->assignmentRecords = parser::parseAssignments(aRecords);
 }

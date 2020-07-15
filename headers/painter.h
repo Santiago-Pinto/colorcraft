@@ -28,6 +28,8 @@ class Painter {
     //From a set of colorings, it returns the one with the lowest functional
     Coloring getMinimum(std::vector<Coloring>& colorings);
 
+    void refine(Coloring& coloring, int colorBound);
+
 
   public:
     Painter();

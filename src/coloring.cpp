@@ -80,10 +80,27 @@ vector<Node> Coloring::getNodes() {
   return this->nodes;
 }
 
+void Coloring::replaceColor(Node* node, short color) {
+
+  for (unsigned int i = 0; i <this->nodes.size(); ++i) {
+    if (this->nodes[i].getLabel() ==  node->getLabel()) {
+      this->nodes[i].assignColor(color);
+
+      for (auto adjacent: this->nodes[i].getAdjacents()) {
+        for (auto adjOfAdj: adjacent->getAdjacents()) {
+          if (adjOfAdj->getLabel() == node->getLabel())
+            adjOfAdj->assignColor(color);
+        }
+      }
+
+    }
+  }
+}
+
 
 void Coloring::print() {
-  for (unsigned int i=0; i < this->strNodes.size(); ++i)
-    cout<<"(" + this->strNodes[i] + ")"<<endl;
+  for (auto node: this->nodes)
+    cout<<"(" + node.getLabel() + ")"<<endl;
   cout<< "Cantidad de colores usados: ";
   cout<< to_string(this->getNumberOfColorsUsed())<<endl;
   cout<< "Funcional: " + to_string(this->getFunctional()) <<endl;
