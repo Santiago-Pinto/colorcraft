@@ -9,6 +9,7 @@ class UiMessageHandler {
   public:
     UiMessageHandler();
     void displayWarning(std::string message);
+    void displayError(std::string message);
 };
 
 

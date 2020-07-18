@@ -54,17 +54,21 @@ void UIHandler::displaySubjects(Grid*& grid) {
 }
 
 
-void UIHandler::getColoring(unsigned int dailyTerms, QLabel* label) {
+void UIHandler::getColoring(int dailyTerms, QLabel* label) {
 
-  this->numberOfClasses = dailyTerms;
-  bool done = false;
-  showProcessingAnimation(label);
-  unsigned int colorBound = dailyTerms*WEEK_DAYS;
-  std::thread coloringThread(&System::colorGraph, &system, colorBound, &done);
-  while(!done)
-    qApp->processEvents();
-  coloringThread.join();
-  stopProcessingAnimation(label);
+  if (dailyTerms > 0) {
+    this->numberOfClasses = dailyTerms;
+    bool done = false;
+    showProcessingAnimation(label);
+    unsigned int colorBound = dailyTerms*WEEK_DAYS;
+    std::thread coloringThread(&System::colorGraph, &system, colorBound, &done);
+    while(!done)
+      qApp->processEvents();
+    coloringThread.join();
+    stopProcessingAnimation(label);
+  } else {
+    uiMessageHandler.displayError("Ingrese una cantidad valida de bloques");
+  }
 }
 
 string UIHandler::getComboBoxValue(QComboBox*& cmbBox) {
@@ -92,15 +96,23 @@ void UIHandler::loadComboBoxWithProfessors(QComboBox*& cmbProfessor,
 
 //                 Subjects methods
 void UIHandler::newSubject(QString& name, QString& load) {
-  string strLoad = convertToStdString(load);
-  string strName = convertToStdString(name);
-  this->system.newSubject(strName, strLoad);
+  if (formatChecker.isPositiveNumber(load)) {
+    string strLoad = convertToStdString(load);
+    string strName = convertToStdString(name);
+    this->system.newSubject(strName, strLoad);
+  } else {
+    uiMessageHandler.displayError("Ingrese una cantidad de bloques valida");
+  }
 }
 
 void UIHandler::updateSubject(QString& name, QString& load) {
-  string strLoad = convertToStdString(load);
-  string strName = convertToStdString(name);
-  this->system.updateSubject(strName, strLoad);
+  if (formatChecker.isPositiveNumber(load)) {
+    string strLoad = convertToStdString(load);
+    string strName = convertToStdString(name);
+    this->system.updateSubject(strName, strLoad);
+  } else {
+    uiMessageHandler.displayError("Ingrese una cantidad de bloques valida");
+  }
 }
 
 void UIHandler::deleteSubject(QString& subject) {

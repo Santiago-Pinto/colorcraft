@@ -4,7 +4,6 @@
 #include <cstdlib>      // std::rand, std::srand
 #include <map>
 #define SWAP_LIMIT 5000
-#define ITERATION_LIMIT 5000
 #define NUMBER_OF_COLORINGS 4
 #include <iostream>
 using namespace std;
@@ -86,7 +85,7 @@ Coloring Painter::colorSwap(Coloring& coloring) {
 }
 
 bool compareNodes(Node& first, Node& second) {
-  return (first.getGrade() > second.getGrade());
+  return (first.getGrade() < second.getGrade());
 }
 
 void Painter::refine(Coloring& coloring, int colorBound) {
@@ -112,7 +111,9 @@ void Painter::refine(Coloring& coloring, int colorBound) {
     }
     adjColors.clear();
   }
-  cout<< "Viejo funcional:" << oldFunctional <<" Refinado: " << coloring.getFunctional() <<endl;
+
+  if(oldFunctional > coloring.getFunctional())
+    cout<< "Viejo funcional:" << oldFunctional <<" Refinado: " << coloring.getFunctional() <<endl;
 }
 
 

@@ -5,6 +5,7 @@
 #include "uiMessageHandler.h"
 #include "comboBoxHandler.h"
 #include "system.h"
+#include "stringFormatChecker.h"
 
 /**This class has no behavior, i don't like it, but felt like needed to
    map database records**/
@@ -15,6 +16,7 @@ class UIHandler {
     CmbBoxHandler cmbHandler;
     AnimationHandler animationHandler;
     UiMessageHandler uiMessageHandler;
+    StringFormatChecker formatChecker;
     System system;
     std::string convertToStdString(QString& qString);
     void showProcessingAnimation(QLabel* label);
@@ -32,7 +34,7 @@ class UIHandler {
     void displayColoring(Grid*& grid, QComboBox*& cmbBox);
     void displaySubjects(Grid*& grid);
 
-    void getColoring(unsigned int dailyTerms, QLabel* label);
+    void getColoring(int dailyTerms, QLabel* label);
     std::string getComboBoxValue(QComboBox*& cmbBox);
 
     //Combo box methods
