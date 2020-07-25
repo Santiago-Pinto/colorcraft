@@ -5,6 +5,7 @@ using std::endl;
 using std::string;
 using std::to_string;
 using std::vector;
+#define PENALTY 10
 
 Node::Node(std::string label, unsigned int profId): label(label), color(0),
  profId(profId) {

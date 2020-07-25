@@ -1,7 +1,7 @@
 #include "system.h"
 #include "node.h"
 #define DB_NAME "ColorcraftDB.db"
-#define ITERATION_LIMIT 5000
+#define ITERATION_LIMIT 2500
 using std::vector;
 using std::string;
 using std::cout;

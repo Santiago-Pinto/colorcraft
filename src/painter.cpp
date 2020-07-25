@@ -3,8 +3,8 @@
 #include <ctime>        // std::time
 #include <cstdlib>      // std::rand, std::srand
 #include <map>
-#define SWAP_LIMIT 5000
-#define NUMBER_OF_COLORINGS 4
+#define SWAP_LIMIT 2500
+#define NUMBER_OF_COLORINGS 64
 #include <iostream>
 using namespace std;
 using std::set;

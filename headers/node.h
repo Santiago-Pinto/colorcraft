@@ -4,7 +4,6 @@
 #include <set>
 #include <vector>
 #include "professor.h"
-#define PENALTY 10
 
 class Node {
   private:
